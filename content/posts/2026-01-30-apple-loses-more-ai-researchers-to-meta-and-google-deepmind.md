@@ -1,8 +1,8 @@
 ---
-date: '2026-01-30T19:15:05+00:00'
+date: '2026-01-30T19:25:07+00:00'
 draft: false
-source_name: Investing.com India
-source_url: https://in.investing.com/news/stock-market-news/apple-loses-more-ai-researchers-to-meta-and-google-deepmind-5214222
+source_name: Investing.com UK
+source_url: https://uk.investing.com/news/stock-market-news/apple-loses-more-ai-researchers-to-meta-and-google-deepmind-4480888
 title: Apple loses more AI researchers to Meta and Google DeepMind By Investing.com
 ---
 
@@ -18,4 +18,4 @@ In another development, Stuart Bowers, a senior executive working on Siri, has a
 
 These exits highlight ongoing challenges within Apple's AI division as the company struggles to keep pace with competitors in the artificial intelligence field. The decision to outsource some technology to Alphabet Inc.'s Google has reportedly caused discontent among staff, contributing to what has become an exodus of talent, particularly from Apple's AI teams.
 
-[Read the original article](https://in.investing.com/news/stock-market-news/apple-loses-more-ai-researchers-to-meta-and-google-deepmind-5214222)
+[Read the original article](https://uk.investing.com/news/stock-market-news/apple-loses-more-ai-researchers-to-meta-and-google-deepmind-4480888)
