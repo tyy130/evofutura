@@ -18,12 +18,28 @@
                 <span class="image-credit">{{ . }}</span>
                 {{ end }}
             </div>
+            {{ else }}
+            <div class="article-image">
+                <div
+                    style="width:100%;height:100%;background:linear-gradient(135deg, var(--color-surface-elevated), var(--color-surface));">
+                </div>
+            </div>
             {{ end }}
             <div class="article-content">
                 <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-                {{ with .Params.source_name }}
-                <span class="source">via {{ . }}</span>
+                <div class="article-meta-line">
+                    <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                    {{ with .Params.source_name }}
+                    <span class="separator">·</span>
+                    <span class="source">{{ . }}</span>
+                    {{ end }}
+                    <span class="separator">·</span>
+                    <span class="read-time">{{ math.Round (div (countwords .Content) 200.0) }} min read</span>
+                </div>
+                {{ if .Description }}
+                <p class="summary">{{ .Description | truncate 120 }}</p>
+                {{ else if .Summary }}
+                <p class="summary">{{ .Summary | truncate 120 }}</p>
                 {{ end }}
             </div>
         </article>

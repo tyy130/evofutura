@@ -1,13 +1,17 @@
 {{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
+<!-- Reading Progress Bar -->
+<div class="reading-progress" id="reading-progress"></div>
+
 <article class="single-article">
     <header class="article-header">
         <h1>{{ .Title }}</h1>
         <div class="article-meta">
             <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            <span class="read-time">{{ math.Round (div (countwords .Content) 200.0) }} min read</span>
             {{ with .Params.source_name }}
-            <span class="source">Source: {{ . }}</span>
+            <span class="source">via {{ . }}</span>
             {{ end }}
         </div>
 
@@ -22,7 +26,7 @@
 
     {{ with .Params.image }}
     <figure class="featured-image">
-        <img src="{{ . }}" alt="{{ $.Title }}">
+        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
         {{ with $.Params.image_credit }}
         <figcaption>{{ . }}</figcaption>
         {{ end }}
@@ -35,8 +39,47 @@
 
     {{ with .Params.source_url }}
     <aside class="original-source">
-        <a href="{{ . }}" target="_blank" rel="noopener">Read the original article →</a>
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Read the original article →</a>
     </aside>
     {{ end }}
+
+    <!-- Related Articles -->
+    {{ $related := first 3 (where (where .Site.RegularPages "Section" "posts") ".Permalink" "!=" .Permalink) }}
+    {{ if $related }}
+    <section class="related-articles">
+        <h2>More Articles</h2>
+        <div class="related-grid">
+            {{ range $related }}
+            <a class="related-card" href="{{ .Permalink }}">
+                {{ with .Params.image }}
+                <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+                {{ end }}
+                <div class="related-card-content">
+                    <h3>{{ .Title | truncate 60 }}</h3>
+                    <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
 </article>
+
+<script>
+    // Reading Progress Indicator
+    (function () {
+        const progressBar = document.getElementById('reading-progress');
+        if (!progressBar) return;
+
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = Math.min(100, progress) + '%';
+        }
+
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    })();
+</script>
 {{ end }}

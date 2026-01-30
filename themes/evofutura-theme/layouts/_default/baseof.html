@@ -1,40 +1,54 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    
+
     <!-- Open Graph -->
     <meta property="og:title" content="{{ .Title }}">
-    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:description"
+        content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}">
-    {{ with .Params.image }}<meta property="og:image" content="{{ . }}">{{ end }}
-    
+    {{ with .Params.image }}
+    <meta property="og:image" content="{{ . }}">{{ end }}
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    
-    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ " css/main.css" | relURL }}">
 </head>
+
 <body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+
     <header class="site-header">
         <nav class="nav-container">
             <a href="{{ .Site.BaseURL }}" class="site-logo">{{ .Site.Title }}</a>
             <ul class="nav-links">
-                <li><a href="{{ "posts/" | relURL }}">Articles</a></li>
-                <li><a href="{{ "tags/" | relURL }}">Topics</a></li>
+                <li><a href="{{ " posts/" | relURL }}">Articles</a></li>
+                <li><a href="{{ " tags/" | relURL }}">Topics</a></li>
             </ul>
         </nav>
     </header>
-    
-    <main class="main-content">
+
+    <main id="main-content" class="main-content">
         {{ block "main" . }}{{ end }}
     </main>
-    
+
     <footer class="site-footer">
         <p>&copy; {{ now.Year }} {{ .Site.Title }}. Autonomous Technology Publication.</p>
     </footer>
 </body>
+
 </html>
