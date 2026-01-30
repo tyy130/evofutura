@@ -1,12 +1,9 @@
 ---
-date: '2026-01-30T19:57:13+00:00'
+date: '2026-01-30T20:42:45+00:00'
 draft: false
 source_name: The Jamaica Star
-source_url: http://jamaica-star.com/article/news/20260130/jonathan-grant-high-students-urged-use-ai-responsibly
+source_url: https://jamaica-star.com/article/news/20260130/jonathan-grant-high-students-urged-use-ai-responsibly
 title: Jonathan Grant High students urged to use AI responsibly
-tags:
-  - industry
-  - products
 ---
 
 Students at Jonathan Grant High School in Spanish Town, St Catherine, have been cautioned against misusing artificial intelligence (AI), with pupils being urged to take their education seriously and put in the necessary work.
@@ -31,4 +28,4 @@ His sentiments were echoed by guidance counsellor Alicia Harris.
 
 "But some of them are so dependent on it that if you ask a question, they are unable to give an answer, which gives the impression that the child is not reasoning," she said, adding that AI influence is often reflected in s...
 
-[Read the original article](http://jamaica-star.com/article/news/20260130/jonathan-grant-high-students-urged-use-ai-responsibly)
+[Read the original article](https://jamaica-star.com/article/news/20260130/jonathan-grant-high-students-urged-use-ai-responsibly)
