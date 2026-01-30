@@ -1,0 +1,10 @@
+[theme]
+name = "Evofutura Theme"
+license = "MIT"
+licenselink = "https://github.com/evofutura/evofutura-theme/blob/main/LICENSE"
+description = "Minimal dark theme for the Evofutura technology publication"
+homepage = "https://evofutura.com"
+min_version = "0.100.0"
+
+[author]
+name = "Evofutura"

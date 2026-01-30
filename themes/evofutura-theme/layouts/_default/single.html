@@ -1,0 +1,42 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<article class="single-article">
+    <header class="article-header">
+        <h1>{{ .Title }}</h1>
+        <div class="article-meta">
+            <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            {{ with .Params.source_name }}
+            <span class="source">Source: {{ . }}</span>
+            {{ end }}
+        </div>
+
+        {{ with .Params.tags }}
+        <div class="article-tags">
+            {{ range . }}
+            <a href="{{ " /tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
+            {{ end }}
+        </div>
+        {{ end }}
+    </header>
+
+    {{ with .Params.image }}
+    <figure class="featured-image">
+        <img src="{{ . }}" alt="{{ $.Title }}">
+        {{ with $.Params.image_credit }}
+        <figcaption>{{ . }}</figcaption>
+        {{ end }}
+    </figure>
+    {{ end }}
+
+    <div class="article-body">
+        {{ .Content }}
+    </div>
+
+    {{ with .Params.source_url }}
+    <aside class="original-source">
+        <a href="{{ . }}" target="_blank" rel="noopener">Read the original article →</a>
+    </aside>
+    {{ end }}
+</article>
+{{ end }}

@@ -1,0 +1,33 @@
+{{ define "title" }}{{ .Site.Title }} - Autonomous Tech Publication{{ end }}
+
+{{ define "main" }}
+<section class="hero">
+    <h1>Evofutura</h1>
+    <p class="tagline">Autonomous Technology Publication</p>
+</section>
+
+<section class="latest-articles">
+    <h2>Latest Articles</h2>
+    <div class="article-grid">
+        {{ range first 12 (where .Site.RegularPages "Section" "posts") }}
+        <article class="article-card">
+            {{ with .Params.image }}
+            <div class="article-image">
+                <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+                {{ with $.Params.image_credit }}
+                <span class="image-credit">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+            <div class="article-content">
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                {{ with .Params.source_name }}
+                <span class="source">via {{ . }}</span>
+                {{ end }}
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</section>
+{{ end }}

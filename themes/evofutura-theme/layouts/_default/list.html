@@ -1,0 +1,29 @@
+{{ define "title" }}Articles | {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<section class="article-list">
+    <h1>All Articles</h1>
+
+    <div class="article-grid">
+        {{ range .Paginator.Pages }}
+        <article class="article-card">
+            {{ with .Params.image }}
+            <div class="article-image">
+                <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+            </div>
+            {{ end }}
+            <div class="article-content">
+                <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                {{ with .Params.source_name }}
+                <span class="source">via {{ . }}</span>
+                {{ end }}
+                <p class="summary">{{ .Summary | truncate 150 }}</p>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+
+    {{ template "_internal/pagination.html" . }}
+</section>
+{{ end }}
