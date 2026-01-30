@@ -4,6 +4,8 @@ draft: false
 source_name: Arab News
 source_url: https://www.arabnews.com/node/2631218/saudi-arabia
 title: SDAIA launches national data, AI curriculum
+tags:
+  - products
 ---
 
 RIYADH: The Saudi Data and Artificial Intelligence Authority has launched the National Cross-Disciplinary Curriculum for University Students in Data and AI.

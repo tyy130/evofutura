@@ -6,6 +6,9 @@ image_credit: 'Source: BW Businessworld'
 source_name: BW Businessworld
 source_url: https://www.businessworld.in/article/who-is-johny-srouji-apple-most-important-senior-executive-591486
 title: Who Is Johny Srouji, Apple's Most Important Senior Executive - BW Businessworld
+tags:
+  - industry
+  - robotics
 ---
 
 Apple's future no longer hinges on industrial design or supply-chain mastery. It hinges on silicon. At the centre of that transformation is Johny Srouji, the executive who reshaped Apple's economics, margins, and competitive moat at the nanometre scale.

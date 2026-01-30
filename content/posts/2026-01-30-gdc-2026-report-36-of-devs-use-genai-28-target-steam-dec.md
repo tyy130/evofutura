@@ -7,6 +7,8 @@ source_name: GamingOnLinux
 source_url: https://www.gamingonlinux.com/2026/01/gdc-2026-report-36pct-of-devs-use-genai-28pct-target-steam-deck-and-8pct-target-linux/
 title: 'GDC 2026 report: 36% of devs use GenAI; 28% target Steam Deck and 8% target
   Linux'
+tags:
+  - ai-research
 ---
 
 The GDC 2026 State of the Game Industry full report is out with "over 2,300" professionals in the industry surveyed, and here's some of the highlights from it. Not ideal for a comparison to last year's survey, as there was a drop from 3,000 people surveyed in 2025 but still an interesting insight into the health of the industry.

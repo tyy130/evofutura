@@ -4,6 +4,9 @@ draft: false
 source_name: GameSpot
 source_url: https://www.gamespot.com/articles/more-developers-than-ever-believe-generative-ai-is-hurting-the-game-industry/1100-6537793/
 title: More Developers Than Ever Believe Generative AI Is Hurting The Game Industry
+tags:
+  - products
+  - robotics
 ---
 
 Over 50% of game developers surveyed by GDC think generative AI is a threat to the video game industry.

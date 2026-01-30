@@ -6,6 +6,8 @@ image_credit: 'Source: Drugs.com'
 source_name: Drugs.com
 source_url: https://www.drugs.com/news/greater-generative-ai-tied-more-depressive-128565.html
 title: Greater Generative AI Use Tied to More Depressive Symptoms
+tags:
+  - robotics
 ---
 
 By Lori Solomon HealthDay Reporter

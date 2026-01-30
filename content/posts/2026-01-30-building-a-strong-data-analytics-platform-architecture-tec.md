@@ -6,6 +6,9 @@ image_credit: 'Source: TechTarget'
 source_name: TechTarget
 source_url: https://www.techtarget.com/searchdatamanagement/feature/Building-a-strong-data-analytics-platform-architecture
 title: Building a strong data analytics platform architecture | TechTarget
+tags:
+  - ai-research
+  - policy
 ---
 
 AI assistance. Use AI to automate analysis, improve productivity and enhance data quality.

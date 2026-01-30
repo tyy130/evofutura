@@ -7,6 +7,8 @@ source_name: Brooklyn Paper
 source_url: https://www.brooklynpaper.com/brookln-public-library-robotics-championship/
 title: Irving Hawks take top prize at Brooklyn Public Library Robotics League championship
   * Brooklyn Paper
+tags:
+  - ai-research
 ---
 
 The Brooklyn Public Central Library held its annual BKLYN Library Robotics League championship on Jan. 25.

@@ -7,6 +7,9 @@ source_name: Popular Mechanics
 source_url: https://www.popularmechanics.com/science/a70187475/digital-life-after-death/
 title: People Could Be 'Resurrected' in Robotic Bodies One Day, Futurist Believes.
   Now He's Taken the First Step.
+tags:
+  - industry
+  - robotics
 ---
 
 "The irony is that during my lifetime I thought about digital immortality, about disrupting death as they say in the Valley ... And now I myself have become an experiment in this field ... This is 2025 and I've been dead for ten years."

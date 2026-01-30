@@ -6,6 +6,8 @@ image_credit: 'Source: Mirror'
 source_name: Mirror
 source_url: https://www.mirror.co.uk/gaming/36-game-studios-using-ai-36645158
 title: 36% of game studios using AI despite overwhelming backlash - The Mirror
+tags:
+  - policy
 ---
 
 More game developers are using generative AI year on year.(Image: Getty Images)

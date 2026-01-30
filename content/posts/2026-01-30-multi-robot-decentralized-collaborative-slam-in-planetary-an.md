@@ -3,10 +3,12 @@ date: '2026-01-30T05:00:00'
 draft: false
 source_name: arXiv cs.RO
 source_url: https://arxiv.org/abs/2601.21063
-tags:
-- cs.RO
 title: 'Multi-Robot Decentralized Collaborative SLAM in Planetary Analogue Environments:
   Dataset, Challenges, and Lessons Learned'
+tags:
+  - cs.RO
+  - industry
+  - policy
 ---
 
 arXiv:2601.21063v1 Announce Type: new 

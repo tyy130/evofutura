@@ -5,6 +5,9 @@ source_name: Nature
 source_url: https://www.nature.com/articles/s41598-026-38059-9
 title: Machine learning models for predicting treatment outcomes in chronic non-specific
   back pain patients undergoing lumbar extension traction
+tags:
+  - policy
+  - products
 ---
 
 We are providing an unedited version of this manuscript to give early access to its findings. Before final publication, the manuscript will undergo further editing. Please note there may be errors present which affect the content, and all legal disclaimers apply.

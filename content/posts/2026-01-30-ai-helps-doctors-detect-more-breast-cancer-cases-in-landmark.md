@@ -6,6 +6,9 @@ image_credit: 'Source: Punch Newspapers'
 source_name: Punch Newspapers
 source_url: https://punchng.com/?p=2050538
 title: AI helps doctors detect more breast cancer cases in landmark trial
+tags:
+  - policy
+  - products
 ---
 
 Artificial intelligence helps doctors spot more cases of breast cancer when reading routine scans, a world-first trial found on Friday.

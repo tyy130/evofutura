@@ -7,6 +7,8 @@ source_name: Proactiveinvestors NA
 source_url: https://www.proactiveinvestors.com/companies/news/1086599/tesla-meta-microsoft-power-metallic-mines-lululemon-what-brokers-said-this-week-1086599.html
 title: 'Tesla, Meta, Microsoft, Power Metallic Mines, Lululemon: What brokers said
   this week'
+tags:
+  - policy
 ---
 
 Jefferies analysts lowered their price target on Lululemon Athletica Inc (NASDAQ:LULU) stock to $185 from $200, coinciding with the outgoing CEO Calvin McDonald's final day at the company.

@@ -4,6 +4,9 @@ draft: false
 source_name: NASDAQ Stock Market
 source_url: https://www.nasdaq.com/articles/ai-startup-venture-capitalists-are-secretly-funding
 title: The AI Startup Venture Capitalists Are Secretly Funding
+tags:
+  - ai-research
+  - robotics
 ---
 
 You can't directly invest in the market's hottest AI start-ups, including OpenAI and Anthropic, unless you're an accredited investor or a venture capitalist. However, you can still follow those companies, see how much funding they attract, and see if they're headed for an IPO.

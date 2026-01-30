@@ -6,6 +6,8 @@ image_credit: 'Source: News On 6'
 source_name: News On 6
 source_url: https://www.newson6.com/tulsa-oklahoma-education/tulsa-top-stem-schools
 title: Explore the top 10 STEM schools Tulsa families are raving about
+tags:
+  - ai-research
 ---
 
 For families interested in specialized education, STEM (science, technology, engineering and mathematics) schools may be the next step for your learner. Many schools lean into these subjects by encouraging hands-on learning, critical thinking and real-world application.

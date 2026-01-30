@@ -3,10 +3,11 @@ date: '2026-01-30T05:00:00'
 draft: false
 source_name: arXiv cs.RO
 source_url: https://arxiv.org/abs/2601.21027
-tags:
-- cs.RO
 title: Track-centric Iterative Learning for Global Trajectory Optimization in Autonomous
   Racing
+tags:
+  - cs.RO
+  - products
 ---
 
 arXiv:2601.21027v1 Announce Type: new 

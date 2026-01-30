@@ -6,6 +6,9 @@ image_credit: 'Source: ervin'
 source_name: ervin
 source_url: https://ervin.ipsquad.net/blog/2026/01/30/web-review-week-2026-05/
 title: Web Review, Week 2026-05 - ervin
+tags:
+  - ai-research
+  - industry
 ---
 
 Let's go for my web review for the week 2026-05.

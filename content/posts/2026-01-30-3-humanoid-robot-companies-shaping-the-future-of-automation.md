@@ -6,6 +6,8 @@ image_credit: 'Source: eWEEK'
 source_name: eWEEK
 source_url: https://www.eweek.com/news/3-humanoid-robot-companies-automation/
 title: 3 Humanoid Robot Companies Shaping the Future of Automation
+tags:
+  - robotics
 ---
 
 eWeek content and product recommendations are editorially independent. We may make money when you click on links to our partners. Learn More

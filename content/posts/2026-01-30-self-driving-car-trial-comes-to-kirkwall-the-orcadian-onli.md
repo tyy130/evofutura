@@ -4,6 +4,8 @@ draft: false
 source_name: The Orcadian Online
 source_url: https://orcadian.co.uk/self-driving-car-trial-comes-to-kirkwall/
 title: Self-driving car trial comes to Kirkwall - The Orcadian Online
+tags:
+  - ai-research
 ---
 
 Orkney residents will have a chance to trial the Auto-Pod self-driving vehicle.

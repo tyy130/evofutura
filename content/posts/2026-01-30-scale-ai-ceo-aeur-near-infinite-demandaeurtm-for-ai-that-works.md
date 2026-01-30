@@ -6,6 +6,8 @@ image_credit: 'Source: semafor.com'
 source_name: semafor.com
 source_url: https://www.semafor.com/article/01/30/2026/scaleai-ceo-near-infinite-demand-for-ai-that-works
 title: 'Scale AI CEO: â€~Near infinite demandâ€™ for AI that works'
+tags:
+  - products
 ---
 
 When people ask questions like â€œare companies getting ROI from their AI implementations,â€ theyâ€™re stuck in an old conversation â€" itâ€™s not the right measurement.

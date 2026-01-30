@@ -7,6 +7,8 @@ source_name: Escapist Magazine
 source_url: https://www.escapistmagazine.com/news-persona-shin-megami-tensei-artist-shutting-down-generative-ai-game-to-relaunch-it-on-switch/
 title: Persona & Shin Megami Tensei artist shutting down generative AI game to relaunch
   it on Switch
+tags:
+  - robotics
 ---
 
 The game from world-renowned artist of the Shin Megami Tensei and Persona series, Kazuma Kaneko, has revealed that his latest game, Tsukuyomi: The Divine Hunter, will be shutting down on April 22. However, Kaneko also announced that the game will be hitting the Nintendo Switch as a full-priced product.

@@ -4,6 +4,9 @@ draft: false
 source_name: IT News Online
 source_url: https://www.itnewsonline.com/PRNewswire/Beam-AI-to-Showcase-Instant-AI-HVAC-Takeoffs-at-AHR-Expo-2026/1108684
 title: Beam AI to Showcase Instant AI HVAC Takeoffs at AHR Expo 2026
+tags:
+  - ai-research
+  - industry
 ---
 
 LAS VEGAS, Jan. 30, 2026 /PRNewswire/ -- Beam AI, a leading AI takeoff and estimating software, has unveiled its breakthrough AI HVAC takeoff software at the AHR Expo. Estimators can now get a full-scope HVAC takeoff in under 10 minutes, cutting hours spent on estimating significantly. In addition, estimators can also obtain bid-ready AI + human-reviewed HVAC takeoffs and Excel-based estimates in 24-48 hours. Expo attendees can catch live software demos at Booth #SU2012 in South Hall at the Las Vegas Convention Centre.

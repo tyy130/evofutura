@@ -6,6 +6,8 @@ image_credit: 'Source: Ars Technica'
 source_name: Ars Technica
 source_url: https://arstechnica.com/ai/2026/01/developers-say-ai-coding-tools-work-and-thats-precisely-what-worries-them/
 title: Developers say AI coding tools work -- and that's precisely what worries them
+tags:
+  - ai-research
 ---
 
 Software developers have spent the past two years watching AI coding tools evolve from advanced autocomplete into something that can, in some cases, build entire applications from a text prompt. Tools like Anthropic's Claude Code and OpenAI's Codex can now work on software projects for hours at a time, writing code, running tests, and, with human supervision, fixing bugs. OpenAI says it now uses Codex to build Codex itself, and the company recently published technical details about how the tool works under the hood. It has caused many to wonder: Is this just more AI industry hype, or are things actually different this time?

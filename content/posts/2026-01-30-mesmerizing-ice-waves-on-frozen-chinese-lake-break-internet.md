@@ -6,6 +6,8 @@ image_credit: 'Source: SURFER Magazine'
 source_name: SURFER Magazine
 source_url: https://www.surfer.com/news/ice-waves-sayram-lake-china-video
 title: Mesmerizing Ice Waves on Frozen Chinese Lake Break Internet (Video)
+tags:
+  - policy
 ---
 
 Sayram Lake is renowned for its natural beauty and cultural legends.

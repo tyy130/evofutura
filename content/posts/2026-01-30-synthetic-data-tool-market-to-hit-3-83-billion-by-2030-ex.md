@@ -7,6 +7,9 @@ source_name: Weekly Voice
 source_url: https://weeklyvoice.com/synthetic-data-tool-market-to-hit-3-83-billion-by-2030-exclusive-tbrc-analysis/
 title: Synthetic Data Tool Market to Hit $3.83 Billion by 2030 - Exclusive TBRC Analysis
   | Weekly Voice
+tags:
+  - ai-research
+  - policy
 ---
 
 The Business Research Company's Synthetic Data Tool Market to Hit $3.83 Billion by 2030 - Exclusive TBRC Analysis

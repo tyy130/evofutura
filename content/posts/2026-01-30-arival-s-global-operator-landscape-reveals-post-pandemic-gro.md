@@ -7,6 +7,9 @@ source_name: Travel And Tour World
 source_url: https://www.travelandtourworld.com/news/article/arivals-global-operator-landscape-reveals-post-pandemic-growth-and-digital-disruption-in-travel-experiences-key-insights-for-2026/
 title: Arival's Global Operator Landscape Reveals Post-Pandemic Growth and Digital
   Disruption in Travel Experiences - Key Insights for 2026 - Travel And Tour World
+tags:
+  - products
+  - robotics
 ---
 
 The Asia Pacific region, which had a delayed reopening following the pandemic, is showing the strongest growth, while Europe continues to enjoy solid demand. On the other hand, the U.S. market is facing uncertainty, particularly due to a decline in inbound tourism in 2025, which has caused some concern for future performance.

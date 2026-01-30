@@ -6,6 +6,8 @@ image_credit: 'Source: Florida Today'
 source_name: Florida Today
 source_url: https://eu.news-journalonline.com/story/news/politics/elections/2026/01/30/volusia-council-candidates-address-questions-at-town-hall/88380161007/
 title: Slow-growth Volusia candidates tackle issues at town hall
+tags:
+  - products
 ---
 
 * Three Volusia County Council candidates aligned with the slow-growth movement shared similar views at a recent forum.

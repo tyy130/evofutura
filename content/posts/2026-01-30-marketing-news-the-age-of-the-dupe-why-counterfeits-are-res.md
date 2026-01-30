@@ -6,6 +6,9 @@ image_credit: 'Source: Merca2.0 Magazine'
 source_name: Merca2.0 Magazine
 source_url: https://www.merca20.com/marketing-the-age-of-the-dupe-why-counterfeits-are-reshaping-brand-value/
 title: 'MARKETING NEWS The age of the dupe: why counterfeits are reshaping brand value'
+tags:
+  - policy
+  - robotics
 ---
 
 Piracy, clone, dupe... Counterfeiting has evolved and is no longer a clandestine act or reserved for the black market

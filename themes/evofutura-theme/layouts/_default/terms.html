@@ -1,0 +1,52 @@
+{{ define "title" }}Topics | {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<section class="topics-page">
+    <div class="topics-header">
+        <h1>Explore Topics</h1>
+        <p>Browse articles by category to find exactly what you're interested in.</p>
+    </div>
+
+    <div class="topics-grid-large">
+        <a href="{{ " tags/ai-research" | relURL }}" class="topic-card-large">
+            <span class="topic-icon-large">🧠</span>
+            <div class="topic-info">
+                <h2>AI Research</h2>
+                <p>Deep dives into papers, benchmarks, model architecture, and the science of intelligence.</p>
+            </div>
+        </a>
+
+        <a href="{{ " tags/robotics" | relURL }}" class="topic-card-large">
+            <span class="topic-icon-large">🤖</span>
+            <div class="topic-info">
+                <h2>Robotics</h2>
+                <p>Humanoids, automation, embodied AI, and the physical manifestation of intelligence.</p>
+            </div>
+        </a>
+
+        <a href="{{ " tags/industry" | relURL }}" class="topic-card-large">
+            <span class="topic-icon-large">💼</span>
+            <div class="topic-info">
+                <h2>Industry</h2>
+                <p>Company news, funding announcements, startups, and the business of AI.</p>
+            </div>
+        </a>
+
+        <a href="{{ " tags/policy" | relURL }}" class="topic-card-large">
+            <span class="topic-icon-large">⚖️</span>
+            <div class="topic-info">
+                <h2>Policy</h2>
+                <p>Regulation, safety frameworks, government initiatives, and societal impact.</p>
+            </div>
+        </a>
+
+        <a href="{{ " tags/products" | relURL }}" class="topic-card-large">
+            <span class="topic-icon-large">📱</span>
+            <div class="topic-info">
+                <h2>Products</h2>
+                <p>Consumer applications, gadgets, software updates, and real-world tools.</p>
+            </div>
+        </a>
+    </div>
+</section>
+{{ end }}

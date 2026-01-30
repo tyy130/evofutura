@@ -6,6 +6,9 @@ image_credit: 'Source: Trucking Dive'
 source_name: Trucking Dive
 source_url: https://www.truckingdive.com/news/plusai-av-public-offering-traton-group-volkswagen-international/810671/
 title: PlusAI shores up OEM partnership ahead of public offering
+tags:
+  - policy
+  - robotics
 ---
 
 This audio is auto-generated. Please let us know if you have feedback.

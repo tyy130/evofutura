@@ -7,6 +7,9 @@ source_name: cnbctv18.com
 source_url: https://www.cnbctv18.com/business/startup/unbox-robotics-series-b-funding-global-expansion-budget-2026-expectations-19837531.htm
 title: Unbox Robotics to deploy Series B funds for faster global expansion, new product
   launches; seeks capex, R&D push in Budget - CNBC TV18
+tags:
+  - policy
+  - products
 ---
 
 Warehouse automation startup Unbox Robotics, which builds modular robotic sortation systems powered by swarm intelligence software, plans to use its freshly raised $28 million Series B funding to accelerate deployments in Europe and the US, while also investing in new product launches to deepen customer adoption.

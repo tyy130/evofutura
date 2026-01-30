@@ -4,6 +4,9 @@ draft: false
 source_name: Investing.com UK
 source_url: https://uk.investing.com/news/stock-market-news/apple-loses-more-ai-researchers-to-meta-and-google-deepmind-4480888
 title: Apple loses more AI researchers to Meta and Google DeepMind By Investing.com
+tags:
+  - policy
+  - products
 ---
 
 Investing.com -- Apple Inc. has lost at least four more artificial intelligence researchers in recent weeks, Bloomberg reported Friday.

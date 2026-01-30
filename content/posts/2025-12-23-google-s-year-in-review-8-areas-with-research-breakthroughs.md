@@ -6,6 +6,8 @@ image_credit: 'Source: Google DeepMind'
 source_name: Google DeepMind
 source_url: https://deepmind.google/blog/googles-year-in-review-8-areas-with-research-breakthroughs-in-2025/
 title: 'Google''s year in review: 8 areas with research breakthroughs in 2025'
+tags:
+  - products
 ---
 
 Google 2025 recap: Research breakthroughs of the year

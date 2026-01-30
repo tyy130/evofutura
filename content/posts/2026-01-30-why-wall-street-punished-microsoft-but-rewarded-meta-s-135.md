@@ -7,6 +7,9 @@ source_name: Benzinga
 source_url: https://www.benzinga.com/Opinion/26/01/50279469/why-wall-street-punished-microsoft-but-rewarded-meta-135-billion-ai-bet
 title: Why Wall Street Punished Microsoft But Rewarded Meta's $135 Billion AI Bet
   - Meta Platforms (NASDAQ:META), Microsoft (NASDAQ:MSFT)
+tags:
+  - ai-research
+  - policy
 ---
 
 A Tale of Two AI Strategies and the Physical Reality Wall Street Finally Noticed

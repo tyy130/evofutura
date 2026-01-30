@@ -7,6 +7,8 @@ source_name: Kbb.com
 source_url: https://www.kbb.com/car-news/autonomous-car-insurance-aims-to-halve-rates-when-using-teslas-fsd/
 title: Autonomous Car Insurance Aims to Halve Rates When Using Tesla's FSD - Kelley
   Blue Book
+tags:
+  - industry
 ---
 
 The company claims that using this insurance can cut costs in half.

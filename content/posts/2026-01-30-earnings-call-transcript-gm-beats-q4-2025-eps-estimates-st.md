@@ -5,6 +5,9 @@ source_name: Investing.com India
 source_url: https://in.investing.com/news/transcripts/earnings-call-transcript-gm-beats-q4-2025-eps-estimates-stock-fluctuates-93CH-5214064
 title: 'Earnings call transcript: GM beats Q4 2025 EPS estimates, stock fluctuates
   By Investing.com'
+tags:
+  - ai-research
+  - robotics
 ---
 
 General Motors (GM) reported its fourth-quarter 2025 earnings, revealing an adjusted EPS of $2.51, surpassing the forecast of $2.24. Despite a revenue shortfall, the company's stock saw significant fluctuations, with a pre-market rise of 6.89% before settling with a slight pre-market dip of 0.54%.

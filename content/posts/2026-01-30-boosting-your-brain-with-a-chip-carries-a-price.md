@@ -6,6 +6,8 @@ image_credit: 'Source: Newsday'
 source_name: Newsday
 source_url: https://www.newsday.com/opinion/commentary/brain-tech-chip-implants-neuralink-io1b3l46
 title: Boosting your brain with a chip carries a price
+tags:
+  - ai-research
 ---
 
 This column reflects the personal views of the author and does not necessarily reflect the opinion of the editorial board or Bloomberg LP and its owners. Parmy Olson is a Bloomberg Opinion columnist covering technology. A former reporter for The Wall Street Journal and Forbes, she is author of "Supremacy: AI, ChatGPT and the Race That Will Change the World."

@@ -4,6 +4,8 @@ draft: false
 source_name: Cryptopolitan
 source_url: https://www.cryptopolitan.com/meta-proves-ai-doubters-wrong-with-135-billion-infrastructure-push/
 title: Meta proves AI doubters wrong with $135 billion infrastructure push - Cryptopolitan
+tags:
+  - industry
 ---
 
 Meta Platforms is pouring massive amounts of money into artificial intelligence, and the bet appears to be paying off through stronger advertising sales.

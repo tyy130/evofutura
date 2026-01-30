@@ -7,6 +7,9 @@ source_name: WebProNews
 source_url: https://www.webpronews.com/inside-apples-quiet-shift-how-anthropics-claude-powers-cupertinos-ai-infrastructure/
 title: 'Inside Apple''s Quiet Shift: How Anthropic''s Claude Powers Cupertino''s AI
   Infrastructure'
+tags:
+  - industry
+  - products
 ---
 
 Apple's artificial intelligence strategy has taken a significant turn that challenges conventional assumptions about the iPhone maker's technological independence. According to Bloomberg's Mark Gurman, Apple has been running substantial portions of its AI operations on Anthropic's Claude models rather than relying exclusively on its own proprietary systems, a revelation that underscores the complex realities facing even the world's most valuable technology company as it navigates the generative AI revolution.

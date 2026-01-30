@@ -6,6 +6,8 @@ image_credit: 'Source: Mirage News'
 source_name: Mirage News
 source_url: https://www.miragenews.com/ai-analyzes-speech-to-uncover-personality-traits-1611364/
 title: AI Analyzes Speech to Uncover Personality Traits
+tags:
+  - products
 ---
 
 Study: Generative AI predicts personality traits based on open-ended narratives

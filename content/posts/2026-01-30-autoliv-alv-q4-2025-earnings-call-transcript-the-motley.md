@@ -6,6 +6,8 @@ image_credit: 'Source: The Motley Fool'
 source_name: The Motley Fool
 source_url: https://www.fool.com/earnings/call-transcripts/2026/01/30/autoliv-alv-q4-2025-earnings-call-transcript/
 title: Autoliv (ALV) Q4 2025 Earnings Call Transcript | The Motley Fool
+tags:
+  - policy
 ---
 
 Guidance on Q1 Profitability -- Mikael Bratt stated, "We expect adjusted operating margin in the first quarter to decline significantly compared to Q1 2025," citing lower production, decreased engineering income, and higher depreciation.

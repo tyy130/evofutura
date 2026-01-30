@@ -6,6 +6,8 @@ image_credit: 'Source: RealClearPolicy'
 source_name: RealClearPolicy
 source_url: https://www.realclearpolicy.com/articles/2026/01/30/trump_has_an_ai_plan_businesses_should_make_theirs_1161971.html
 title: Trump Has an AI Plan. Businesses Should Make Theirs.
+tags:
+  - robotics
 ---
 
 For much of history, nations that possessed a technological advantage were often more successful economically and geopolitically. Looking forward, it appears that the development and deployment of artificial intelligence, or AI, will determine where those advantages manifest in the 21st century.

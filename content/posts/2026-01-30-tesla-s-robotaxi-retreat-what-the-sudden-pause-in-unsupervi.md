@@ -7,6 +7,8 @@ source_name: WebProNews
 source_url: https://www.webpronews.com/teslas-robotaxi-retreat-what-the-sudden-pause-in-unsupervised-operations-reveals-about-autonomous-vehicle-reality/
 title: 'Tesla''s Robotaxi Retreat: What the Sudden Pause in Unsupervised Operations
   Reveals About Autonomous Vehicle Reality'
+tags:
+  - policy
 ---
 
 Tesla's ambitious push into autonomous transportation hit an unexpected speed bump this week when the electric vehicle manufacturer quietly paused unsupervised robotaxi operations, raising fundamental questions about the readiness of self-driving technology and the regulatory framework surrounding it. The decision, which comes amid heightened scrutiny of autonomous vehicle safety and Tesla's Full Self-Driving capabilities, represents a significant setback for a company that has long positioned itself at the vanguard of transportation innovation.

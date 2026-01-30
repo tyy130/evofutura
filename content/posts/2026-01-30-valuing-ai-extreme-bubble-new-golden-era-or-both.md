@@ -6,6 +6,8 @@ image_credit: 'Source: Advisor Perspectives'
 source_name: Advisor Perspectives
 source_url: https://www.advisorperspectives.com/commentaries/2026/01/30/valuing-ai-extreme-bubble-new-golden-era-or-both
 title: 'Valuing AI: Extreme Bubble, New Golden Era, or Both'
+tags:
+  - industry
 ---
 
 Membership is now required to use this feature. To learn more:

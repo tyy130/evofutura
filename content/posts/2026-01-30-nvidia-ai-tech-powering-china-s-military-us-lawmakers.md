@@ -6,6 +6,9 @@ image_credit: 'Source: Channels Television'
 source_name: Channels Television
 source_url: https://www.channelstv.com/2026/01/30/nvidia-ai-tech-powering-chinas-military-us-lawmakers/
 title: Nvidia AI Tech 'Powering China's Military'  --  US Lawmakers
+tags:
+  - ai-research
+  - policy
 ---
 
 "Nvidia's products were used by DeepSeek and ended up supporting an AI model used by the PLA," it said, referring to China's People's Liberation Army.

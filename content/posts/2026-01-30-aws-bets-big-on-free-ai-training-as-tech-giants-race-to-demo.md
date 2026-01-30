@@ -7,6 +7,9 @@ source_name: WebProNews
 source_url: https://www.webpronews.com/aws-bets-big-on-free-ai-training-as-tech-giants-race-to-democratize-machine-learning-skills/
 title: AWS Bets Big on Free AI Training as Tech Giants Race to Democratize Machine
   Learning Skills
+tags:
+  - policy
+  - products
 ---
 
 Amazon Web Services has launched a comprehensive free training initiative aimed at addressing the growing skills gap in artificial intelligence, offering professionals and organizations a pathway to understanding generative AI without financial barriers. The AWS Generative AI Essentials course represents a strategic move by the cloud computing giant to expand its ecosystem while simultaneously addressing one of the technology industry's most pressing challenges: the shortage of qualified AI practitioners.

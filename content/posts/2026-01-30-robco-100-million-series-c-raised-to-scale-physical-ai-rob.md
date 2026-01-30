@@ -7,6 +7,8 @@ source_name: Pulse 2.0
 source_url: https://pulse2.com/robco-100-million-series-c-raised-to-scale-physical-ai-robotics-in-u-s-and-europe/
 title: 'RobCo: $100 Million Series C Raised To Scale Physical AI Robotics In U.S.
   And Europe'
+tags:
+  - products
 ---
 
 RobCo, a Munich-founded physical AI-driven robotics company, has raised $100 million in Series C funding to advance its "Physical AI" roadmap, expand enterprise deployments, and deepen its presence in the U.S. market. The company, founded in 2020, builds AI-enabled robotic systems designed to operate inside real production environments, targeting industrial use cases where autonomy and adaptability are increasingly critical.

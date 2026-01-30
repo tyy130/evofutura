@@ -4,6 +4,9 @@ draft: false
 source_name: Gizmodo
 source_url: https://gizmodo.com/?p=2000716070
 title: Google's Project Genie Is Not for You
+tags:
+  - ai-research
+  - policy
 ---
 
 Google has a whole new world for people to play inâ€"but only for a minute. This week, the company released Project Genie, which the company calls its "general-purpose world model" that is capable of generating interactive environments. First unveiled to a small group of invite-only testers back in August of last year, the model, known as Genie 3, is now rolling out to Google AI Ultra subscribers in the US, so you can get your hands on it for the low, low price of $250 per month.

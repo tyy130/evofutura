@@ -6,6 +6,9 @@ image_credit: 'Source: CNHI News'
 source_name: CNHI News
 source_url: https://www.cnhinews.com/exchange/finance/article_991d481a-dbac-5603-ad0c-ce690e85382e.html
 title: 'Sales tech stack ROI: What C-suite executives must fix now'
+tags:
+  - industry
+  - policy
 ---
 
 Sales tech stack ROI: What C-suite executives must fix now

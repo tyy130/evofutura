@@ -6,6 +6,9 @@ image_credit: 'Source: Human Progress'
 source_name: Human Progress
 source_url: https://humanprogress.org/ai-use-in-breast-cancer-screening-cuts-rate-of-later-diagnosis/
 title: AI Use in Breast Cancer Screening Cuts Rate of Later Diagnosis
+tags:
+  - industry
+  - products
 ---
 
 "The use of artificial intelligence in breast cancer screening reduces the rate of a cancer diagnosis by 12% in subsequent years and leads to a higher rate of early detection, according to the first trial of its kind.

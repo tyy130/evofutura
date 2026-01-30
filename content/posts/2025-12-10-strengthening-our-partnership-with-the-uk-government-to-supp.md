@@ -7,6 +7,9 @@ source_name: Google DeepMind
 source_url: https://deepmind.google/blog/strengthening-our-partnership-with-the-uk-government-to-support-prosperity-and-security-in-the-ai-era/
 title: Strengthening our partnership with the UK government to support prosperity
   and security in the AI era
+tags:
+  - industry
+  - policy
 ---
 
 Deepening our partnership with the UK government to support prosperity and security in the AI era

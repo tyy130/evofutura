@@ -7,6 +7,8 @@ source_name: Daily Sun
 source_url: http://www.daily-sun.com/post-logu/854901
 title: Bangladesh Should Deploy Artificial Intelligence to Accelerate Environmental
   Sustainability Progress
+tags:
+  - industry
 ---
 
 Current discourse predominantly focuses on the detrimental effects of artificial intelligence (AI), with relatively little attention given to its potential advantages. Today, I am introducing a topic where AI and its major fields can play a significant role in our overall lives. The world will face numerous substantial challenges in the future, one of the most pressing of which is achieving sustainability through environmental development. AI can be effectively applied to a wide range of environmental challenges, including climate change, energy management, resource optimization, and disaster management, and thus can play a significant role in achieving sustainability in the future. To achieve sustainability by ensuring a safe environment for human civilization, important branches of AI, such as machine learning, deep learning, computer vision, image processing, neural networks, pattern recognition, data science, and knowledge-based engineering, can play a very effective role in formulating short-term, medium-term, and long-term plans and taking practical initiatives.

@@ -6,6 +6,9 @@ image_credit: 'Source: Newsweek'
 source_name: Newsweek
 source_url: https://www.newsweek.com/sponsored/dine-group-precision-tools-power-smart-machining
 title: 'DINE Group: Precision Tools Power Smart Machining'
+tags:
+  - industry
+  - robotics
 ---
 
 Modern manufacturing is like shifting seas, shaped by automation, reshored supply chains and the accelerating rise of smart factories. Most industrial giants steer like cargo ships: powerful, but slow to turn. DINE is a different kind of vessel. Agile, deliberate and horizon-focused, the company has spent the last six decades navigating change rather than resisting it, expanding from cutting tools to complete production ecosystems and, in 2018, into robotics. Now, DINE stands as both a manufacturer and a guide for the global transition to intelligent, connected and sustainable production.

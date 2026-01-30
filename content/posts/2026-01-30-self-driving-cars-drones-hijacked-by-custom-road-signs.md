@@ -6,6 +6,8 @@ image_credit: 'Source: TheRegister.com'
 source_name: TheRegister.com
 source_url: https://www.theregister.com/2026/01/30/road_sign_hijack_ai/
 title: Self-driving cars, drones hijacked by custom road signs
+tags:
+  - robotics
 ---
 
 Indirect prompt injection occurs when a bot takes input data and interprets it as a command. We've seen this problem numerous times when AI bots were fed prompts via web pages or PDFs they read. Now, academics have shown that self-driving cars and autonomous drones will follow illicit instructions that have been written onto road signs.

@@ -3,11 +3,13 @@ date: '2026-01-30T05:00:00'
 draft: false
 source_name: arXiv cs.RO
 source_url: https://arxiv.org/abs/2601.21297
-tags:
-- cs.RO
-- cs.SY
-- eess.SY
 title: 'Deep QP Safety Filter: Model-free Learning for Reachability-based Safety Filter'
+tags:
+  - cs.RO
+  - cs.SY
+  - eess.SY
+  - industry
+  - robotics
 ---
 
 arXiv:2601.21297v1 Announce Type: new 

@@ -6,6 +6,9 @@ image_credit: 'Source: TechRepublic'
 source_name: TechRepublic
 source_url: https://www.techrepublic.com/article/news-lloyds-bank-ai-value/
 title: Lloyds Projects £100M Value From AI in 2026 - TechRepublic
+tags:
+  - ai-research
+  - policy
 ---
 
 This update underscores how one of the UK's largest banking groups is moving beyond experimentation with AI and into large-scale deployment.

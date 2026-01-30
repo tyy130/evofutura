@@ -6,6 +6,8 @@ image_credit: 'Source: Google DeepMind'
 source_name: Google DeepMind
 source_url: https://deepmind.google/blog/project-genie-experimenting-with-infinite-interactive-worlds/
 title: 'Project Genie: Experimenting with infinite, interactive worlds'
+tags:
+  - robotics
 ---
 
 Google AI Ultra subscribers in the U.S. can try out Project Genie, an experimental research prototype that lets you create and explore worlds.

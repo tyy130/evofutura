@@ -1,30 +1,121 @@
 {{ define "title" }}{{ .Site.Title }} - Autonomous Tech Publication{{ end }}
 
 {{ define "main" }}
-<section class="hero">
-    <h1>Evofutura</h1>
-    <p class="tagline">Autonomous Technology Publication</p>
+{{/* Get all posts sorted by date */}}
+{{ $allPosts := where .Site.RegularPages "Section" "posts" }}
+{{ $postsWithImages := slice }}
+{{ $postsWithoutImages := slice }}
+
+{{/* Separate posts with and without images */}}
+{{ range $allPosts }}
+{{ if .Params.image }}
+{{ $postsWithImages = $postsWithImages | append . }}
+{{ else }}
+{{ $postsWithoutImages = $postsWithoutImages | append . }}
+{{ end }}
+{{ end }}
+
+{{/* Hero Section - Featured Articles */}}
+<section class="hero-news">
+    {{ $featured := first 1 $postsWithImages }}
+    {{ $secondary := after 1 $postsWithImages | first 2 }}
+
+    <div class="hero-grid">
+        {{/* Main Featured Article */}}
+        {{ range $featured }}
+        <article class="hero-featured">
+            <a href="{{ .Permalink }}" class="hero-featured-link">
+                <div class="hero-featured-image">
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="eager">
+                </div>
+                <div class="hero-featured-content">
+                    <span class="hero-badge">Featured</span>
+                    <h1>{{ .Title }}</h1>
+                    <p class="hero-summary">{{ if .Description }}{{ .Description | truncate 200 }}{{ else }}{{ .Summary
+                        | truncate 200 }}{{ end }}</p>
+                    <div class="hero-meta">
+                        <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                        {{ with .Params.source_name }}
+                        <span class="separator">·</span>
+                        <span>{{ . }}</span>
+                        {{ end }}
+                        <span class="separator">·</span>
+                        <span>{{ math.Round (div (countwords .Content) 200.0) }} min read</span>
+                    </div>
+                </div>
+            </a>
+        </article>
+        {{ end }}
+
+        {{/* Secondary Articles */}}
+        <div class="hero-secondary">
+            {{ range $secondary }}
+            <article class="hero-secondary-card">
+                <a href="{{ .Permalink }}" class="hero-secondary-link">
+                    <div class="hero-secondary-image">
+                        <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="eager">
+                    </div>
+                    <div class="hero-secondary-content">
+                        <h2>{{ .Title | truncate 80 }}</h2>
+                        <div class="hero-meta">
+                            <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
+                            {{ with .Params.source_name }}
+                            <span class="separator">·</span>
+                            <span>{{ . }}</span>
+                            {{ end }}
+                        </div>
+                    </div>
+                </a>
+            </article>
+            {{ end }}
+        </div>
+    </div>
 </section>
 
+{{/* Headlines Stack - Text-only articles (if any) */}}
+{{ if gt (len $postsWithoutImages) 0 }}
+<section class="headlines-section">
+    <h2 class="section-title">Headlines</h2>
+    <div class="headline-stacks">
+        {{ $.Scratch.Set "headlineIndex" 0 }}
+        {{ range $postsWithoutImages | first 9 }}
+        {{ $index := mod ($.Scratch.Get "headlineIndex") 3 }}
+        {{ if eq $index 0 }}
+        <div class="headline-stack">
+            {{ end }}
+            <article class="headline-item">
+                <a href="{{ .Permalink }}">
+                    <h3>{{ .Title | truncate 70 }}</h3>
+                    <div class="headline-meta">
+                        <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
+                        {{ with .Params.source_name }}
+                        <span class="separator">·</span>
+                        <span>{{ . }}</span>
+                        {{ end }}
+                    </div>
+                </a>
+            </article>
+            {{ if eq $index 2 }}
+        </div>
+        {{ end }}
+        {{ $.Scratch.Add "headlineIndex" 1 }}
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+
+{{/* Latest Articles Grid */}}
 <section class="latest-articles">
-    <h2>Latest Articles</h2>
+    <h2 class="section-title">Latest Articles</h2>
     <div class="article-grid">
-        {{ range first 12 (where .Site.RegularPages "Section" "posts") }}
+        {{ range after 3 $postsWithImages | first 12 }}
         <article class="article-card">
-            {{ with .Params.image }}
             <div class="article-image">
-                <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
-                {{ with $.Params.image_credit }}
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                {{ with .Params.image_credit }}
                 <span class="image-credit">{{ . }}</span>
                 {{ end }}
             </div>
-            {{ else }}
-            <div class="article-image">
-                <div
-                    style="width:100%;height:100%;background:linear-gradient(135deg, var(--color-surface-elevated), var(--color-surface));">
-                </div>
-            </div>
-            {{ end }}
             <div class="article-content">
                 <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
                 <div class="article-meta-line">
@@ -37,13 +128,49 @@
                     <span class="read-time">{{ math.Round (div (countwords .Content) 200.0) }} min read</span>
                 </div>
                 {{ if .Description }}
-                <p class="summary">{{ .Description | truncate 120 }}</p>
+                <p class="summary">{{ .Description | truncate 100 }}</p>
                 {{ else if .Summary }}
-                <p class="summary">{{ .Summary | truncate 120 }}</p>
+                <p class="summary">{{ .Summary | truncate 100 }}</p>
                 {{ end }}
             </div>
         </article>
         {{ end }}
+    </div>
+
+    <div class="view-all-link">
+        <a href="{{ " posts/" | relURL }}">View All Articles →</a>
+    </div>
+</section>
+
+{{/* Topics Section */}}
+<section class="topics-section">
+    <h2 class="section-title">Explore Topics</h2>
+    <div class="topics-grid">
+        <a href="{{ " tags/ai-research" | relURL }}" class="topic-card">
+            <span class="topic-icon">🧠</span>
+            <h3>AI Research</h3>
+            <p>Papers, benchmarks, and model advances</p>
+        </a>
+        <a href="{{ " tags/robotics" | relURL }}" class="topic-card">
+            <span class="topic-icon">🤖</span>
+            <h3>Robotics</h3>
+            <p>Hardware, automation, and humanoids</p>
+        </a>
+        <a href="{{ " tags/industry" | relURL }}" class="topic-card">
+            <span class="topic-icon">💼</span>
+            <h3>Industry</h3>
+            <p>Business, funding, and companies</p>
+        </a>
+        <a href="{{ " tags/policy" | relURL }}" class="topic-card">
+            <span class="topic-icon">⚖️</span>
+            <h3>Policy</h3>
+            <p>Government and regulation</p>
+        </a>
+        <a href="{{ " tags/products" | relURL }}" class="topic-card">
+            <span class="topic-icon">📱</span>
+            <h3>Products</h3>
+            <p>Consumer AI and applications</p>
+        </a>
     </div>
 </section>
 {{ end }}

@@ -6,6 +6,9 @@ image_credit: 'Source: Google DeepMind'
 source_name: Google DeepMind
 source_url: https://deepmind.google/blog/d4rt-teaching-ai-to-see-the-world-in-four-dimensions/
 title: 'D4RT: Teaching AI to see the world in four dimensions'
+tags:
+  - ai-research
+  - products
 ---
 
 D4RT: Unified, efficient 4D reconstruction and tracking up to 300x faster than prior methods.

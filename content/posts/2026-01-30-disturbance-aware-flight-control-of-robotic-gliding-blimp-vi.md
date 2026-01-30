@@ -3,9 +3,10 @@ date: '2026-01-30T05:00:00'
 draft: false
 source_name: arXiv cs.RO
 source_url: https://arxiv.org/abs/2601.21188
-tags:
-- cs.RO
 title: Disturbance-Aware Flight Control of Robotic Gliding Blimp via Moving Mass Actuation
+tags:
+  - cs.RO
+  - robotics
 ---
 
 arXiv:2601.21188v1 Announce Type: new 

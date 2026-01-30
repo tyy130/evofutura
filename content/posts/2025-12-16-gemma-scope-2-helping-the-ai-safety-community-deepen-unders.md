@@ -7,6 +7,9 @@ source_name: Google DeepMind
 source_url: https://deepmind.google/blog/gemma-scope-2-helping-the-ai-safety-community-deepen-understanding-of-complex-language-model-behavior/
 title: 'Gemma Scope 2: helping the AI safety community deepen understanding of complex
   language model behavior'
+tags:
+  - industry
+  - robotics
 ---
 
 Open interpretability tools for language models are now available across the entire Gemma 3 family with the release of Gemma Scope 2.

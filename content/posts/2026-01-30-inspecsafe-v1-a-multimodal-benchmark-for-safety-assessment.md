@@ -3,11 +3,13 @@ date: '2026-01-30T05:00:00'
 draft: false
 source_name: arXiv cs.RO
 source_url: https://arxiv.org/abs/2601.21173
-tags:
-- cs.RO
-- cs.CV
 title: 'InspecSafe-V1: A Multimodal Benchmark for Safety Assessment in Industrial
   Inspection Scenarios'
+tags:
+  - cs.CV
+  - cs.RO
+  - products
+  - robotics
 ---
 
 arXiv:2601.21173v1 Announce Type: new 

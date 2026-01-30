@@ -6,6 +6,8 @@ image_credit: 'Source: DNyuz'
 source_name: DNyuz
 source_url: https://dnyuz.com/2026/01/30/why-waymos-london-launch-matters/
 title: Why Waymo's London Launch Matters
+tags:
+  - industry
 ---
 
 Welcome back to In the Loop, TIME's new twice-weekly newsletter about AI. If you're reading this in your browser, why not subscribe to have the next one delivered straight to your inbox?

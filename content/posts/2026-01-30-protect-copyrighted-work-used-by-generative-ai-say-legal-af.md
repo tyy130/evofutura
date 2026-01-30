@@ -7,6 +7,8 @@ source_name: pubaffairsbruxelles.eu
 source_url: https://www.pubaffairsbruxelles.eu/eu-institution-news/protect-copyrighted-work-used-by-generative-ai-say-legal-affairs-meps/
 title: Protect copyrighted work used by generative AI, say Legal Affairs MEPs - PubAffairs
   Bruxelles
+tags:
+  - policy
 ---
 
 Access to high quality data to train generative AI in the EU should go hand in hand with fair remuneration for the creative sector.

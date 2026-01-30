@@ -6,6 +6,8 @@ image_credit: 'Source: University of Michigan News'
 source_name: University of Michigan News
 source_url: https://news.umich.edu/say-whats-on-your-mind-and-ai-can-tell-what-kind-of-person-you-are/
 title: Say what's on your mind, and AI can tell what kind of person you are
+tags:
+  - industry
 ---
 
 If you say a few words, generative AI will understand who you are -- maybe even better than your close family and friends.

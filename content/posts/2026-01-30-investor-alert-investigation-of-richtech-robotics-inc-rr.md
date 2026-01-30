@@ -7,6 +7,9 @@ source_name: Eagle-Tribune
 source_url: https://www.eagletribune.com/region/investor-alert-investigation-of-richtech-robotics-inc-rr-by-holzer-holzer-llc/article_8c1c9a79-22d5-50d2-9a53-9d09d7c25ad2.html
 title: 'INVESTOR ALERT: Investigation of Richtech Robotics Inc. (RR) by Holzer & Holzer,
   LLC'
+tags:
+  - products
+  - robotics
 ---
 
 ATLANTA, Jan. 30, 2026 (GLOBE NEWSWIRE) -- Holzer & Holzer, LLC is investigating whether Richtech Robotics Inc. ("Richtech" or the "Company") (NASDAQ: RR) complied with federal securities laws. On January 29, 2026, Hunterbrook Media released a report alleging that "no material partnership appears to exist" between Richtech Robotics' engineering team and Microsoft's AI Co-Innovation Labs. Following this news, the price of the Company's stock dropped.

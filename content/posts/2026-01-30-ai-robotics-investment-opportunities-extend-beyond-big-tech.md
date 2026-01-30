@@ -4,6 +4,8 @@ draft: false
 source_name: ETF Trends
 source_url: https://www.etftrends.com/disruptive-technology-content-hub/ai-robotics-investment-opportunities-extend-beyond-big-tech/
 title: AI Robotics Investment Opportunities Extend Beyond Big Tech
+tags:
+  - robotics
 ---
 
 The artificial intelligence and robotics investment opportunity extends far beyond the headline-grabbing tech giants, offering exposure to a diverse ecosystem of enablers and application developers that many investors overlook, according to experts at VettaFi's Winter Symposium on Thursday.

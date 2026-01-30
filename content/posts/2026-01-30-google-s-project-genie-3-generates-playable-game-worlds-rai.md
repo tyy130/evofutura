@@ -7,6 +7,9 @@ source_name: Escapist Magazine
 source_url: https://www.escapistmagazine.com/news-googles-project-genie-3-generates-playable-game-worlds/
 title: Google's Project Genie 3 generates playable game worlds, raising questions
   for future of game development
+tags:
+  - ai-research
+  - robotics
 ---
 
 For the last few months, gamers have largely let big dev studios know that AI is non-negotiable in games. From the fears of Larian's ongoing use, ARC Raiders' voice-acting debacle, and even Gen AI art in both Black Ops 6 and Battlefield 6, it is a bit wild. But now, Google has unleashed Project Genie 3 for US AI Pro subscribers.

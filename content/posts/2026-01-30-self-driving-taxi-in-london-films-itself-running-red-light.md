@@ -6,6 +6,8 @@ image_credit: 'Source: Yahoo'
 source_name: Yahoo
 source_url: https://www.yahoo.com/news/articles/self-driving-taxi-london-films-142615000.html
 title: Self-driving taxi in London films itself running red light
+tags:
+  - ai-research
 ---
 
 Add Yahoo as a preferred source to see more of our stories on Google.

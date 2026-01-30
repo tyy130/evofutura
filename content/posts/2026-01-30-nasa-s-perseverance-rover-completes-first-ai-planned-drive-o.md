@@ -6,6 +6,9 @@ image_credit: 'Source: NASA Jet Propulsion Laboratory (JPL)'
 source_name: NASA Jet Propulsion Laboratory (JPL)
 source_url: https://www.jpl.nasa.gov/news/nasas-perseverance-rover-completes-first-ai-planned-drive-on-mars/
 title: NASA's Perseverance Rover Completes First AI-Planned Drive on Mars
+tags:
+  - industry
+  - products
 ---
 
 The team for the six-wheeled scientist used a vision-capable AI to create a safe route over the Red Planet's surface without the input of human route planners.

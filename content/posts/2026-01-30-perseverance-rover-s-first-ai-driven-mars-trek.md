@@ -6,6 +6,9 @@ image_credit: 'Source: Mirage News'
 source_name: Mirage News
 source_url: https://www.miragenews.com/perseverance-rovers-first-ai-driven-mars-trek-1611417/
 title: Perseverance Rover's First AI-Driven Mars Trek
+tags:
+  - industry
+  - policy
 ---
 
 The team for the six-wheeled scientist used a vision-capable AI to create a safe route over the Red Planet's surface without the input of human route planners.

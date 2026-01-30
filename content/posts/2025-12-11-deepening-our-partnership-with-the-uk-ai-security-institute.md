@@ -6,6 +6,9 @@ image_credit: 'Source: Google DeepMind'
 source_name: Google DeepMind
 source_url: https://deepmind.google/blog/deepening-our-partnership-with-the-uk-ai-security-institute/
 title: Deepening our partnership with the UK AI Security Institute
+tags:
+  - industry
+  - products
 ---
 
 Google DeepMind and UK AI Security Institute (AISI) strengthen collaboration on critical AI safety and security research

@@ -7,6 +7,8 @@ source_name: Business Standard
 source_url: https://www.business-standard.com/content/press-releases-ani/india-signals-shift-from-ai-vision-to-sovereign-execution-with-the-launch-of-iairo-126013100026_1.html
 title: India Signals Shift from AI Vision to Sovereign Execution with the launch of
   IAIRO
+tags:
+  - industry
 ---
 
 New Delhi [India], January 30: A decisive shift in India's artificial intelligence journey is in the making with the formal launch of Indian AI Research Organisation (IAIRO), a pioneering institution and a national beacon dedicated to foundational and applied AI research aligned with India's core challenges and priorities. Aimed at catalysing the shift - from strategy formulation to sovereignty and streamlined execution from prototypes and IP to global products - the launch of IAIRO comes at a pivotal moment backed by a position paper titled 'Sovereign AI for India's Strategic Autonomy' by Dr Amit Sheth, the Founding Director of IAIRO.

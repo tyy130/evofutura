@@ -6,6 +6,9 @@ image_credit: 'Source: Streaming Media Magazine'
 source_name: Streaming Media Magazine
 source_url: https://www.streamingmedia.com/Articles/ReadArticle.aspx?ArticleID=173325
 title: Dubbing Optimization for Streaming Dialogue and Singing in the AI Era
+tags:
+  - policy
+  - products
 ---
 
 Generative AI has transformed the technology, the workflow, and arguably the ethics of dubbing dialogue for TV and movies in recent years, with the costly and time-consuming traditional approach of a voice actor, director, and technical crew gathering in a studio for live audio replacement very much a thing of the past. The perception now is that generative AI can easily (and some would say dangerously) produce or replicate virtually any voice, but Dubformer's Anton Dvorkovich and Google's Nick Manoochehri insistthat generating the desired voice and refining it toward emotional precision and perfection remain challenging and as much art as science -- for dialogue and especially for singing -- as he explains in this conversation with DigitalGlue's Philip Grossman and PADEM Media Group's Allan McLennan at Streaming Media 2025.

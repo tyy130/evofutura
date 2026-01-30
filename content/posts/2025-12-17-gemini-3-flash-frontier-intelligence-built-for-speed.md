@@ -6,6 +6,8 @@ image_credit: 'Source: Google DeepMind'
 source_name: Google DeepMind
 source_url: https://deepmind.google/blog/gemini-3-flash-frontier-intelligence-built-for-speed/
 title: 'Gemini 3 Flash: frontier intelligence built for speed'
+tags:
+  - policy
 ---
 
 Gemini 3 Flash offers frontier intelligence built for speed at a fraction of the cost.

@@ -3,13 +3,14 @@ date: '2026-01-30T05:00:00'
 draft: false
 source_name: arXiv cs.RO
 source_url: https://arxiv.org/abs/2601.21011
-tags:
-- cs.RO
-- cs.MA
-- cs.OS
-- cs.SE
 title: 'Meta-ROS: A Next-Generation Middleware Architecture for Adaptive and Scalable
   Robotic Systems'
+tags:
+  - cs.MA
+  - cs.OS
+  - cs.RO
+  - cs.SE
+  - products
 ---
 
 arXiv:2601.21011v1 Announce Type: new 

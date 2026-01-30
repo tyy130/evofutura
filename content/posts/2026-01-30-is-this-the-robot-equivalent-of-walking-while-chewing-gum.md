@@ -6,6 +6,9 @@ image_credit: 'Source: IEEE Spectrum: Technology, Engineering, and Science News'
 source_name: 'IEEE Spectrum: Technology, Engineering, and Science News'
 source_url: https://spectrum.ieee.org/multitasking-robot
 title: Is This the Robot Equivalent of Walking While Chewing Gum?
+tags:
+  - industry
+  - products
 ---
 
 Westwood Robotics is proud to announce a major update: THEMIS Gen2.5, the world's first commercial full-size humanoid robot capable of manipulation on the move!

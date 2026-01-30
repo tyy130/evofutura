@@ -3,9 +3,10 @@ date: '2026-01-30T05:00:00'
 draft: false
 source_name: arXiv cs.RO
 source_url: https://arxiv.org/abs/2601.21251
-tags:
-- cs.RO
 title: Abstracting Robot Manipulation Skills via Mixture-of-Experts Diffusion Policies
+tags:
+  - cs.RO
+  - industry
 ---
 
 arXiv:2601.21251v1 Announce Type: new 

@@ -6,6 +6,8 @@ image_credit: 'Source: FA Magazine'
 source_name: FA Magazine
 source_url: https://www.fa-mag.com/news/morgan-stanley-sees-a-economic-growth-in-2026--but-a-more-vulnerable-market-85701.html
 title: Morgan Stanley Sees Economic Growth In 2026, But A More Vulnerable Market
+tags:
+  - policy
 ---
 
 The U.S. economy is set up for another year of solid growth in 2026, according to Morgan Stanley. But it's another story for the markets and stock pickers.

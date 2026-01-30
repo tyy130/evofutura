@@ -6,6 +6,8 @@ image_credit: 'Source: The Next Web'
 source_name: The Next Web
 source_url: https://thenextweb.com/news/apple-buys-silent-speech-ai-startup-for-2b-because-talking-is-so-2025
 title: Apple buys Q.ai to help devices read our faces
+tags:
+  - industry
 ---
 
 But check your assumptions: this isn't Beats 2.0. There's no new headphone brand to flex. Instead, Apple is paying top dollar for tech that might let your devices understand you without you ever saying a word.

@@ -6,6 +6,8 @@ image_credit: 'Source: Forbes'
 source_name: Forbes
 source_url: https://www.forbes.com/sites/bradtempleton/2026/01/30/to-build-fsd-is-elon-musk-being-corts-and-burning-his-ships/
 title: To Build FSD, Is Elon Musk Being Cortés And Burning His Ships?
+tags:
+  - robotics
 ---
 
 Is Elon Musk's strategy, betting the future of Tesla on the success of their efforts to make a working self-driving system with a camera-only machine learning car, similar to that of the Spanish conquistador Hernán Cortés, who legend says burned his ships so that his crew could not return home, leaving them no choice but to conquer Mexico?

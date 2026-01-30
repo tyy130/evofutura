@@ -7,6 +7,8 @@ source_name: sonatype.com
 source_url: https://www.sonatype.com/blog/the-great-shift-cybersecurity-predictions-for-2026-and-the-new-era-of-threat-intelligence
 title: 'The Great Shift: Cybersecurity Predictions for 2026 and the New Era of Threat
   Intelligence'
+tags:
+  - policy
 ---
 
 As we look back on 2025, AI and open source have fundamentally changed how software is built. Generative AI, automated pipelines, and ubiquitous open source have dramatically increased developer velocity and expanded what teams can deliver -- while shifting risk into the everyday decisions developers make as code is written, generated, and assembled.

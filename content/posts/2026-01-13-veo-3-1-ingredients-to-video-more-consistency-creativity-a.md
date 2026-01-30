@@ -6,6 +6,8 @@ image_credit: 'Source: Google DeepMind'
 source_name: Google DeepMind
 source_url: https://deepmind.google/blog/veo-3-1-ingredients-to-video-more-consistency-creativity-and-control/
 title: 'Veo 3.1 Ingredients to Video: More consistency, creativity and control'
+tags:
+  - ai-research
 ---
 
 Our latest Veo update generates lively, dynamic clips that feel natural and engaging — and supports vertical video generation.

@@ -6,6 +6,8 @@ image_credit: 'Source: KUSA.com'
 source_name: KUSA.com
 source_url: https://www.9news.com/article/news/crime/ai-alter-real-photos-explicit-images/73-5e7cb519-1844-47ba-9cb0-02023c99b5b8
 title: Man accused of using AI to alter real photos of children into explicit images
+tags:
+  - policy
 ---
 
 BOULDER COUNTY, Colo. -- A 72-year-old Boulder County man has been arrested and is accused of using AI to create sexually explicit images of children, the sheriff's office announced.

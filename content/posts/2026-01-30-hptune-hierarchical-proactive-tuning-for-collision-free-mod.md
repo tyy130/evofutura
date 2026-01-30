@@ -3,10 +3,11 @@ date: '2026-01-30T05:00:00'
 draft: false
 source_name: arXiv cs.RO
 source_url: https://arxiv.org/abs/2601.21346
-tags:
-- cs.RO
 title: 'HPTune: Hierarchical Proactive Tuning for Collision-Free Model Predictive
   Control'
+tags:
+  - ai-research
+  - cs.RO
 ---
 
 arXiv:2601.21346v1 Announce Type: new 

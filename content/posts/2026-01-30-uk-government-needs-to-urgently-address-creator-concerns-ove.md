@@ -7,6 +7,9 @@ source_name: CMU
 source_url: https://completemusicupdate.com/uk-government-needs-to-urgently-address-creator-concerns-over-ai-say-two-new-studies/
 title: UK government needs to urgently address creator concerns over AI, say two new
   studies
+tags:
+  - industry
+  - robotics
 ---
 
 PRS and ISM have both published new studies on creator concerns around generative AI, seeking to put pressure on the UK government as ministers prepare to set out their long-awaited plans regarding AI and copyright. The government must ensure creator livelihoods "are protected", PRS says

@@ -6,6 +6,9 @@ image_credit: 'Source: Scmr                               '
 source_name: 'Scmr                               '
 source_url: https://www.scmr.com/article/can-ai-help-simplify-put-away-rule-configuration-in-wms
 title: Can AI help simplify put-away rule configuration in WMS?
+tags:
+  - policy
+  - products
 ---
 
 Editor's note: Sreekumar Somasundaram is a senior supply chain technical program manager at AWS. This article and its content was created prior to his current position with AWS.

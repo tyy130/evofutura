@@ -7,6 +7,8 @@ source_name: Supply and Demand Chain Executive
 source_url: https://www.sdcexec.com/professional-development/hiring/news/22959095/infragistics-recruiting-retaining-skilled-talent-to-challenge-supply-chain-organizations-in-2026
 title: Recruiting, Retaining Skilled Talent to Challenge Supply Chain Organizations
   in 2026
+tags:
+  - industry
 ---
 
 Recruiting and retaining skilled technology talent has emerged as the single biggest business challenge for 2026, cited by 50% of respondents, up sharply from 34% in 2025.

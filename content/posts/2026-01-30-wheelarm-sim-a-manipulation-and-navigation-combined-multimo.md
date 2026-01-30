@@ -3,10 +3,12 @@ date: '2026-01-30T05:00:00'
 draft: false
 source_name: arXiv cs.RO
 source_url: https://arxiv.org/abs/2601.21129
-tags:
-- cs.RO
 title: 'WheelArm-Sim: A Manipulation and Navigation Combined Multimodal Synthetic
   Data Generation Simulator for Unified Control in Assistive Robotics'
+tags:
+  - cs.RO
+  - products
+  - robotics
 ---
 
 arXiv:2601.21129v1 Announce Type: new 

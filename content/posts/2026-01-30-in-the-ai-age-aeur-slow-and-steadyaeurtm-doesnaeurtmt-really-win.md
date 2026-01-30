@@ -6,6 +6,9 @@ image_credit: 'Source: semafor.com'
 source_name: semafor.com
 source_url: https://www.semafor.com/article/01/30/2026/in-the-ai-age-slow-and-steady-is-on-the-outs
 title: In the AI age, â€~slow and steadyâ€™ doesnâ€™t really win
+tags:
+  - industry
+  - robotics
 ---
 
 Sign up for Semafor Technology: Whatâ€™s next in the new era of tech. Read it now.

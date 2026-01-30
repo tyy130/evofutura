@@ -7,6 +7,9 @@ source_name: Pulse 2.0
 source_url: https://pulse2.com/mito-ai-4-5-million-pre-seed-funding-closed-for-collaborative-ai-video-creation-platform/
 title: 'MITO AI: $4.5 Million Pre-Seed Funding Closed For Collaborative AI Video Creation
   Platform'
+tags:
+  - policy
+  - robotics
 ---
 
 MITO AI, a Madrid- and San Francisco-based startup building a collaborative platform for AI-native video creation, has raised a $4.5 million pre-seed round led by Paul Murphy at Lightspeed Venture Partners. The company said the financing included participation from Kibo, Kfund, Sequoia, and A16Z scouts, LifeX, and angel investors, including unicorn founders and executives with ties to USV, Roblox, and GitHub.

@@ -5,6 +5,8 @@ source_name: nyrej.com
 source_url: https://nyrej.com/two-trees-management-brokers-thirteen-new-leases-signed-in-dumbo-totaling-26000-sf
 title: Two Trees Management brokers thirteen new leases signed in DUMBO totaling 26,000
   s/f
+tags:
+  - products
 ---
 
 Brooklyn, NY Two Trees Management Co., a family-owned real estate development firm, completed thirteen new office leases in DUMBO, all signed in Q4 of 2025: Edit Church, Mammoth Projects, Apply Stickers, Helium AI, Asinc Systems, Biographer, Starling Architecture, View Source, Index Robotics, Neal Beckstedt Studio, MHI Studio, Peterson Rich, and Revise Robotics. Totaling 26,000 s/f, these leases bring Two Trees' annual total to over 200,000 s/f in new deals in DUMBO and over 325,000 s/f across the city, which is more than 50% of the commercial leases in the borough in 2025.

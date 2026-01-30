@@ -3,9 +3,11 @@ date: '2026-01-30T05:00:00'
 draft: false
 source_name: arXiv cs.RO
 source_url: https://arxiv.org/abs/2601.20968
-tags:
-- cs.RO
 title: Quick Heuristic Validation of Edges in Dynamic Roadmap Graphs
+tags:
+  - ai-research
+  - cs.RO
+  - products
 ---
 
 arXiv:2601.20968v1 Announce Type: new 

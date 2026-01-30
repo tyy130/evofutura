@@ -7,6 +7,9 @@ source_name: Comic Sands
 source_url: https://www.comicsands.com/musk-sweeney-ai-video
 title: Elon Musk Shares Bizarre AI Video Of Sydney Sweeney Weeks After Making Gross
   Comment About Her Body
+tags:
+  - policy
+  - robotics
 ---
 
 Just weeks after 54-year-old Elon Musk was called out for making a creepy, juvenile AI video about actor Sydney Sweeney's breasts, he decided to promote the use of her likeness and voice to tout how great his X AI Grok Imagine -- a text-to-video feature -- is at making deep fakes.

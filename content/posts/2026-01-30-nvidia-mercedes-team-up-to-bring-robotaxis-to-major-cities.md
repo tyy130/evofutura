@@ -6,6 +6,8 @@ image_credit: 'Source: eWEEK'
 source_name: eWEEK
 source_url: https://www.eweek.com/news/nvidia-mercedes-uber-robotaxi-plans/
 title: Nvidia, Mercedes Team Up to Bring Robotaxis to Major Cities | eWEEK
+tags:
+  - products
 ---
 
 eWeek content and product recommendations are editorially independent. We may make money when you click on links to our partners. Learn More

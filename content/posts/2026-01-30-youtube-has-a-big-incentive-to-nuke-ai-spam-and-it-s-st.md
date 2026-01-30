@@ -7,6 +7,8 @@ source_name: DNyuz
 source_url: https://dnyuz.com/2026/01/30/youtube-has-a-big-incentive-to-nuke-ai-spam-and-its-starting-to-take-action/
 title: YouTube has a big incentive to nuke AI spam  --  and it's starting to take
   action
+tags:
+  - ai-research
 ---
 
 YouTube is telling advertisers it's the future of TV. AI spam could put that story in jeopardy.

@@ -4,6 +4,9 @@ draft: false
 source_name: Tech Times
 source_url: https://www.techtimes.com/articles/314388/20260130/apple-ai-pin-explained-this-screenless-wearable-worth-wearing-every-day.htm
 title: 'Apple AI Pin Explained: Is This Screenless Wearable Worth Wearing Every Day?'
+tags:
+  - industry
+  - robotics
 ---
 
 The Apple AI Pin is shaping up to be Apple's boldest rethink of personal computing since the Apple Watch. Instead of another screen, it leans into voice, vision, and context, clipping discreetly to clothing for hands-free interaction. Designed as an iPhone companion rather than a replacement, the Apple AI Pin raises a practical question: does removing the screen make everyday tasks easier, or just more awkward?

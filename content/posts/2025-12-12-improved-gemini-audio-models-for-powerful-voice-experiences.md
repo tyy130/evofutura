@@ -6,6 +6,8 @@ image_credit: 'Source: Google DeepMind'
 source_name: Google DeepMind
 source_url: https://deepmind.google/blog/improved-gemini-audio-models-for-powerful-voice-experiences/
 title: Improved Gemini audio models for powerful voice experiences
+tags:
+  - industry
 ---
 
 

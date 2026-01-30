@@ -4,6 +4,9 @@ draft: false
 source_name: 'Scienmag: Latest Science and Health News'
 source_url: https://scienmag.com/hybrid-squeezenet-and-ml-models-boost-alzheimers-diagnosis/
 title: Hybrid SqueezeNet and ML Models Boost Alzheimer's Diagnosis
+tags:
+  - industry
+  - policy
 ---
 
 In recent developments in the field of artificial intelligence and medical diagnostics, researchers have successfully championed the hybrid stacking of SqueezeNet features alongside machine learning (ML) models to enhance the accuracy of Alzheimer's disease diagnosis. This innovative approach, highlighted in their study, presents a groundbreaking way to leverage advanced neural networks in processing medical imaging and clinical data for more effective diagnosis of one of the most challenging neurodegenerative disorders.

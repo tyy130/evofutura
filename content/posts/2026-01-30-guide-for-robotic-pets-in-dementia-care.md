@@ -4,6 +4,9 @@ draft: false
 source_name: 'Scienmag: Latest Science and Health News'
 source_url: https://scienmag.com/guide-for-robotic-pets-in-dementia-care/
 title: Guide for Robotic Pets in Dementia Care
+tags:
+  - policy
+  - products
 ---
 
 In recent years, the incorporation of technology into healthcare has taken on transformative dimensions, especially when it comes to enhancing the quality of life for older adults suffering from conditions such as dementia. A groundbreaking study led by researchers including Fernandes, Toohey, and Lashewicz focuses on the utilization of robotic pets within continuing care settings in Canada. This innovative approach aims to address the emotional and psychological needs of elderly individuals, showcasing the potential technologies have in bridging gaps in traditional caregiving.

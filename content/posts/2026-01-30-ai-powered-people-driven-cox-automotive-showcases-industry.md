@@ -5,6 +5,9 @@ source_name: IT News Online
 source_url: https://www.itnewsonline.com/PRNewswire/AI-Powered-People-Driven-Cox-Automotive-Showcases-Industry-Leading-Capabilities-and-an-Unmatched-Breadth-of-Technology-at-NADA-2026/1108691
 title: AI-Powered, People-Driven, Cox Automotive Showcases Industry-Leading Capabilities
   and an Unmatched Breadth of Technology at NADA 2026
+tags:
+  - products
+  - robotics
 ---
 
 * Cox Automotive will highlight new retail, wholesale, EV and logistics solutions at NADA 2026, reinforcing its role as the industry's largest automotive services and technology provider.

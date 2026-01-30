@@ -5,6 +5,9 @@ source_name: Argonne National Laboratory
 source_url: https://www.anl.gov/article/rajeev-surendran-assary-on-using-artificial-intelligence-to-boost-scientific-and-technological
 title: Rajeev Surendran Assary on using artificial intelligence to boost scientific
   and technological discovery
+tags:
+  - industry
+  - robotics
 ---
 
 His work supports battery innovation, critical materials research and other efforts at Argonne.

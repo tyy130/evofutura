@@ -7,6 +7,9 @@ source_name: Springer
 source_url: https://link.springer.com/article/10.1007/s11831-026-10507-9
 title: A Systematic Review of Machine Learning Techniques for Predicting Compressive
   and Flexural Strength of Mortars - Archives of Computational Methods in Engineering
+tags:
+  - industry
+  - robotics
 ---
 
 Considering these aspects, a detailed discussion of ML models and their hyperparameter configurations is presented in the following section for the most frequently employed algorithms identified in the reviewed studies -- namely Artificial Neural Networks (ANN), Support Vector Machines (SVM), Random Forests (RF), Adaptive Boosting (AdaBoost), and Gradient/Extreme Gradient Boosting (GB/XGBoost).
