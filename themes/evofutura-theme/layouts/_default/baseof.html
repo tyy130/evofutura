@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+    <link rel="stylesheet" href="{{ " css/main.css" | relURL }}">
 </head>
 
 <body>
@@ -36,11 +36,16 @@
         <nav class="nav-container">
             <a href="{{ .Site.BaseURL }}" class="site-logo">{{ .Site.Title }}</a>
             <ul class="nav-links">
-                <li><a href="{{ "posts/" | relURL }}">Articles</a></li>
-                <li><a href="{{ "tags/" | relURL }}">Topics</a></li>
+                <li><a href="{{ " posts/" | relURL }}">Articles</a></li>
+                <li><a href="{{ " tags/" | relURL }}">Topics</a></li>
+                <li><a href="#newsletter" class="btn-subscribe">Subscribe</a></li>
             </ul>
         </nav>
     </header>
+
+    {{ if not .IsHome }}
+    {{ partial "breadcrumbs.html" . }}
+    {{ end }}
 
     <main id="main-content" class="main-content">
         {{ block "main" . }}{{ end }}
@@ -56,18 +61,27 @@
             <div class="footer-topics">
                 <h4>Topics</h4>
                 <ul>
-                    <li><a href="{{ "tags/ai-research" | relURL }}">AI Research</a></li>
-                    <li><a href="{{ "tags/robotics" | relURL }}">Robotics</a></li>
-                    <li><a href="{{ "tags/industry" | relURL }}">Industry</a></li>
-                    <li><a href="{{ "tags/policy" | relURL }}">Policy</a></li>
-                    <li><a href="{{ "tags/products" | relURL }}">Products</a></li>
+                    <li><a href="{{ " tags/ai-research" | relURL }}">AI Research</a></li>
+                    <li><a href="{{ " tags/robotics" | relURL }}">Robotics</a></li>
+                    <li><a href="{{ " tags/industry" | relURL }}">Industry</a></li>
+                    <li><a href="{{ " tags/policy" | relURL }}">Policy</a></li>
+                    <li><a href="{{ " tags/products" | relURL }}">Products</a></li>
                 </ul>
+            </div>
+            <div id="newsletter" class="footer-newsletter">
+                <h4>Join the Digest</h4>
+                <p>Curated AI insights delivered weekly.</p>
+                <form class="newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="email@example.com" aria-label="Email address" required>
+                    <button type="submit" class="btn-primary">Sign Up</button>
+                </form>
             </div>
             <div class="footer-links">
                 <h4>Connect</h4>
                 <ul>
-                    <li><a href="{{ "index.xml" | relURL }}">RSS Feed</a></li>
-                    <li><a href="{{ "posts/" | relURL }}">All Articles</a></li>
+                    <li><a href="{{ " index.xml" | relURL }}">RSS Feed</a></li>
+                    <li><a href="#">Twitter / X</a></li>
+                    <li><a href="#">LinkedIn</a></li>
                 </ul>
             </div>
         </div>

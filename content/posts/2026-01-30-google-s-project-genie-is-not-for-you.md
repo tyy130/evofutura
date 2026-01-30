@@ -9,7 +9,7 @@ tags:
   - policy
 ---
 
-Google has a whole new world for people to play inâ€"but only for a minute. This week, the company released Project Genie, which the company calls its "general-purpose world model" that is capable of generating interactive environments. First unveiled to a small group of invite-only testers back in August of last year, the model, known as Genie 3, is now rolling out to Google AI Ultra subscribers in the US, so you can get your hands on it for the low, low price of $250 per month.
+Google has a whole new world for people to play in—but only for a minute. This week, the company released Project Genie, which the company calls its "general-purpose world model" that is capable of generating interactive environments. First unveiled to a small group of invite-only testers back in August of last year, the model, known as Genie 3, is now rolling out to Google AI Ultra subscribers in the US, so you can get your hands on it for the low, low price of $250 per month.
 
 The fact that Google is showing off a world model is interesting on its own. Unlike a large language model (LLM), the underlying technology that powers most consumer-facing AI tools including Google's own Gemini, which use the vast amount of training data they are given to predict the most likely next part of a sequence, world models are trained on the dynamics of the real world, including physics and spatial properties, to create a simulation of how physical environments operate.
 

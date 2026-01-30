@@ -1,0 +1,25 @@
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="nav-container">
+        <a href="{{ .Site.BaseURL | relURL }}">Home</a>
+        
+        {{ if eq .Kind "term" }}
+            <span class="separator">/</span>
+            <a href="{{ "tags/" | relURL }}">Topics</a>
+            <span class="separator">/</span>
+            <span class="current">{{ .Title }}</span>
+        {{ else if eq .Kind "taxonomy" }}
+            <span class="separator">/</span>
+            <span class="current">Topics</span>
+        {{ else if eq .Section "posts" }}
+            {{ if .IsPage }}
+                <span class="separator">/</span>
+                <a href="{{ "posts/" | relURL }}">Articles</a>
+                <span class="separator">/</span>
+                <span class="current">{{ .Title }}</span>
+            {{ else }}
+                <span class="separator">/</span>
+                <span class="current">Articles</span>
+            {{ end }}
+        {{ end }}
+    </div>
+</nav>
