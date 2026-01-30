@@ -1,12 +1,11 @@
 ---
-date: '2026-01-30T21:36:25+00:00'
+date: '2026-01-30T21:42:13+00:00'
 draft: false
-image: https://res.cloudinary.com/dg7khxdal/image/upload/v1769810589/evofutura/uploads/2026/01/generative-ai-is-eating-culture-see-how-close-it.jpg
-image_credit: 'Source: FOX 11 41 Tri Cities Yakima'
-source_name: FOX 11 41 Tri Cities Yakima
-source_url: https://www.fox41yakima.com/generative-ai-is-eating-culture-see-how-close-its-getting-to-disrupting-dance/
+image: https://res.cloudinary.com/dg7khxdal/image/upload/v1769813094/evofutura/uploads/2026/01/generative-ai-is-eating-culture-see-how-close-it.jpg
+image_credit: 'Source: NonStop Local Montana'
+source_name: NonStop Local Montana
+source_url: https://www.montanarightnow.com/national_news/generative-ai-is-eating-culture-see-how-close-it-s-getting-to-disrupting-dance/article_cb4e8481-c5d1-566e-825c-f1c869184061.html
 title: Generative AI is eating culture. See how close it's getting to disrupting dance
-  | Fox 11 Tri Cities Fox 41 Yakima
 ---
 
 Generative AI is eating culture. See how close it's getting to disrupting dance
@@ -23,4 +22,4 @@ Developers of AI systems are working continuously to do an increasingly better j
 
 Clarke's conflicting and uncertain thoughts about AI mirror those of other dancers across California interviewed by CalMatters, who were, depending on the specific question or moment in time, optimistic, sk...
 
-[Read the original article](https://www.fox41yakima.com/generative-ai-is-eating-culture-see-how-close-its-getting-to-disrupting-dance/)
+[Read the original article](https://www.montanarightnow.com/national_news/generative-ai-is-eating-culture-see-how-close-it-s-getting-to-disrupting-dance/article_cb4e8481-c5d1-566e-825c-f1c869184061.html)
