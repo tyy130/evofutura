@@ -1,10 +1,10 @@
 ---
-date: '2026-01-31T02:01:03+00:00'
+date: '2026-01-31T02:52:21+00:00'
 draft: false
-image: https://res.cloudinary.com/dg7khxdal/image/upload/v1769827861/evofutura/uploads/2026/01/faraday-future-tesla-each-plan-robot-rollout-jo.jpg
-image_credit: 'Source: Curated - BLOX Digital Content Exchange'
-source_name: Curated - BLOX Digital Content Exchange
-source_url: https://curated.tncontentexchange.com/states/california/hanford/faraday-future-tesla-each-plan-robot-rollout-john-lindt/article_0c4541bf-5ab9-594c-9efc-f2f765e6c9fc.html
+image: https://res.cloudinary.com/dg7khxdal/image/upload/v1769847057/evofutura/uploads/2026/01/faraday-future-tesla-each-plan-robot-rollout-jo.jpg
+image_credit: 'Source: Redwood News'
+source_name: Redwood News
+source_url: https://www.redwoodnews.tv/news/state/faraday-future-tesla-each-plan-robot-rollout-john-lindt/article_878629d5-4d9a-54d9-946a-9e339a861b97.html
 title: Faraday Future, Tesla each plan robot rollout | John Lindt
 ---
 
@@ -20,4 +20,4 @@ The City of Fremont put out a news release Jan. 28 that says "To be clear, Tesla
 
 Tesla is retooling a portion of the Fremont campus for Optimus robot production and they have stated that this retooling will not result in job losses, but that Fremont headcount may increase. Fremont was selected as Tesla's Optimus hub due to the city's proven ability to support large-scale, comple...
 
-[Read the original article](https://curated.tncontentexchange.com/states/california/hanford/faraday-future-tesla-each-plan-robot-rollout-john-lindt/article_0c4541bf-5ab9-594c-9efc-f2f765e6c9fc.html)
+[Read the original article](https://www.redwoodnews.tv/news/state/faraday-future-tesla-each-plan-robot-rollout-john-lindt/article_878629d5-4d9a-54d9-946a-9e339a861b97.html)

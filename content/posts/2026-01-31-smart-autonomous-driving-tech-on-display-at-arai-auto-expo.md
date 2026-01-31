@@ -1,0 +1,14 @@
+---
+date: '2026-01-31T02:34:51+00:00'
+draft: false
+image: https://res.cloudinary.com/dg7khxdal/image/upload/v1769847139/evofutura/uploads/2026/01/smart-autonomous-driving-tech-on-display-at-arai.jpg
+image_credit: 'Source: The Times of India'
+source_name: The Times of India
+source_url: https://timesofindia.indiatimes.com/city/pune/smart-autonomous-driving-tech-on-display-at-arai-auto-expo-in-pune/articleshow/127809164.cms
+title: Smart, autonomous driving tech on display at ARAI auto expo in Pune | Pune
+  News - The Times of India
+---
+
+Pune: Technologies ranging from smart driving for cars to driverless vehicles used in logistics were showcased on Friday at the Symposium on International Automotive Technology 2026, organised by the Automotive Research Association of India (ARAI). A combination of hardware and a software stack that can serve as a smart assistant for drivers -- different from ADAS technology -- attracted several curious visitors. This particular technology can send alerts from vehicle-to-vehicle or vehicle-to-infrastructure to inform a driver about obstacles on the road. In contrast, ADAS tech depends on sensors and cameras to alert a driver and also takes over control from the latter to apply brakes. "The showcased intelligent technology stack has a range of 900m to 1km and can be fitted on older versions of cars that do not have ADAS," a booth representative of the company that developed the technology told TOI. Secondly, the expo also showcased an autonomous mobile robot designed to tow a payload of up to 100kg that has a maximum speed of 8km per hour. The robotic technology has uses in the logistics and warehousing segment, representatives informed. Amongst other items on display was a sodium-ion battery developed by Vilas Shelke with support from the National Chemical Laboratory (NCL). These batteries can serve as a substitute for lithium-ion batteries. At present, India is dependent on imports of cobalt, nickel and lithium from other countries. "In contrast, India has large reserves of sodium, and it is also obtained from seawater. The manufacturing process for this battery will be carried out entirely in India. This battery does not catch fire, and ARAI tested it at 120 degrees Celsius," Shelke said. The sodium-ion batteries developed by Shelke will be used in two-wheelers in about nine months in the first phase, followed by three- and four-wheelers. Shelke also said he has plans to set up manufacturing for the same in the city.
+
+[Read the original article](https://timesofindia.indiatimes.com/city/pune/smart-autonomous-driving-tech-on-display-at-arai-auto-expo-in-pune/articleshow/127809164.cms)
