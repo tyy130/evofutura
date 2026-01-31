@@ -1,14 +1,12 @@
 ---
-date: '2026-01-31T02:44:01+00:00'
+date: '2026-01-31T02:50:40+00:00'
 draft: false
-image: https://res.cloudinary.com/dg7khxdal/image/upload/v1769827889/evofutura/uploads/2026/01/ex-google-engineer-convicted-of-stealing-ai-trade.jpg
-image_credit: 'Source: Los Angeles Times'
-source_name: Los Angeles Times
-source_url: https://www.latimes.com/california/story/2026-01-30/ex-google-engineer-convicted-of-stealing-ai-trade-secrets-for-china
+image: https://res.cloudinary.com/dg7khxdal/image/upload/v1769828146/evofutura/uploads/2026/01/ex-google-engineer-convicted-of-stealing-ai-trade.jpg
+image_credit: 'Source: DNyuz'
+source_name: DNyuz
+source_url: https://dnyuz.com/2026/01/31/ex-google-engineer-convicted-of-stealing-ai-trade-secrets-to-benefit-china/
 title: Ex-Google engineer convicted of stealing AI trade secrets to benefit China
 ---
-
-Linewei Ding used the information to create a technology company in China, prosecutors said.
 
 A former software engineer at Google has been convicted of stealing artificial intelligence trade secrets for the benefit of China, the U.S. Department of Justice said.
 
@@ -26,6 +24,6 @@ Ding downloaded the trade secrets to his personal computer less than two weeks b
 
 His application stated that he planned to "help China to have computing power infrastructure capabilities that are on par with the international level," prosecutors said.
 
-"This conviction reinforces the FBI's steadfast commitment to protecting A...
+"This conviction reinforces the FBI's steadfast commitment to protecting American innovation and national security," FBI Special Agent in Charge Sanjay Virmani said in ...
 
-[Read the original article](https://www.latimes.com/california/story/2026-01-30/ex-google-engineer-convicted-of-stealing-ai-trade-secrets-for-china)
+[Read the original article](https://dnyuz.com/2026/01/31/ex-google-engineer-convicted-of-stealing-ai-trade-secrets-to-benefit-china/)
