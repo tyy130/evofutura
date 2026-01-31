@@ -1,14 +1,12 @@
 ---
-date: '2026-01-30T21:42:13+00:00'
+date: '2026-01-30T23:25:02+00:00'
 draft: false
-image: https://res.cloudinary.com/dg7khxdal/image/upload/v1769813094/evofutura/uploads/2026/01/generative-ai-is-eating-culture-see-how-close-it.jpg
-image_credit: 'Source: NonStop Local Montana'
-source_name: NonStop Local Montana
-source_url: https://www.montanarightnow.com/national_news/generative-ai-is-eating-culture-see-how-close-it-s-getting-to-disrupting-dance/article_cb4e8481-c5d1-566e-825c-f1c869184061.html
+image: https://res.cloudinary.com/dg7khxdal/image/upload/v1769827848/evofutura/uploads/2026/01/generative-ai-is-eating-culture-see-how-close-it.jpg
+image_credit: 'Source: NewsChannel 3-12'
+source_name: NewsChannel 3-12
+source_url: https://keyt.com/news/stacker-news/2026/01/30/generative-ai-is-eating-culture-see-how-close-its-getting-to-disrupting-dance/
 title: Generative AI is eating culture. See how close it's getting to disrupting dance
 ---
-
-Generative AI is eating culture. See how close it's getting to disrupting dance
 
 Dancers say their craft can't be duplicated by AI. Our tests show they're right -- for now.
 
@@ -20,6 +18,6 @@ So when Clarke heard that some generative artificial intelligence models, like G
 
 Developers of AI systems are working continuously to do an increasingly better job of replicating complex human movement, including dance. Doing so has become a sort of holy grail in the field of generative AI due to the many technical challenges involved, but it remains an open question among dancers like Clarke of how much the technology will disrupt the world of dance as it progresses.
 
-Clarke's conflicting and uncertain thoughts about AI mirror those of other dancers across California interviewed by CalMatters, who were, depending on the specific question or moment in time, optimistic, sk...
+Clarke's conflicting and uncertain thoughts about AI mirror those of other dancers across California interviewed by CalMatters, who were, depending on the specific question or moment in time, optimistic, skeptical and concerned about AI's incursion into their art form. Most settled into...
 
-[Read the original article](https://www.montanarightnow.com/national_news/generative-ai-is-eating-culture-see-how-close-it-s-getting-to-disrupting-dance/article_cb4e8481-c5d1-566e-825c-f1c869184061.html)
+[Read the original article](https://keyt.com/news/stacker-news/2026/01/30/generative-ai-is-eating-culture-see-how-close-its-getting-to-disrupting-dance/)
