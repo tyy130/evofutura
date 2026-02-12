@@ -1,0 +1,82 @@
+{
+  "AI": [
+    "Neuro-symbolic AI for Enterprise Reasoning",
+    "Multi-agent Autonomous Workflows (Agentic AI)",
+    "Edge-native Inference for Mobile Devices",
+    "Safety Alignment and Governance Frameworks",
+    "Large Reasoning Models (LRMs) vs Traditional LLMs",
+    "AI Code Generation: Beyond Copilot",
+    "Synthetic Data for Enterprise Training",
+    "Foundation Models for Vertical Industries"
+  ],
+  "ML": [
+    "Automated Feature Engineering Pipelines",
+    "MLOps 2.0: Continuous Learning Systems",
+    "Data Quality Observability for Training Sets",
+    "Quantization Techniques for Small Models",
+    "Time Series Transformers for Financial Prediction",
+    "Federated Learning at Scale",
+    "Model Interpretability for Regulated Industries",
+    "AutoML Platforms: 2026 Benchmarks"
+  ],
+  "Cloud": [
+    "Serverless GPU Clusters for AI Scaling",
+    "Multi-cloud Federation Patterns",
+    "FinOps Strategies for Kubernetes Waste",
+    "Zero-Trust Networking in Cloud Environments",
+    "WebAssembly (WASM) as a Cloud Runtime",
+    "Spot Instance Orchestration for Cost Efficiency",
+    "Cloud-native Databases: NewSQL vs Distributed SQL",
+    "Service Mesh Evolution: Ambient Mesh Patterns"
+  ],
+  "DevOps": [
+    "Platform Engineering vs Traditional SRE",
+    "AI-driven CI/CD Pipeline Optimization",
+    "Infrastructure-as-Code Drift Detection",
+    "OpenTelemetry and Semantic Observability",
+    "Security Shift-Left in the Age of AI",
+    "GitOps at Scale: Fleet Management",
+    "Developer Experience (DX) Engineering",
+    "Incident Response Automation with AI"
+  ],
+  "WebDev": [
+    "React Server Components Architecture",
+    "Web Performance: Crushing LCP in 2026",
+    "Modern CSS: Cascade Layers and Subgrid",
+    "Edge Rendering and Global State Management",
+    "Local-first Web Applications",
+    "TypeScript 5.x: New Type System Features",
+    "Microfrontends: Module Federation Patterns",
+    "WebGPU for Browser-based ML"
+  ],
+  "Security": [
+    "Zero-Trust Architecture Implementation",
+    "Supply Chain Security: SBOM and Attestation",
+    "AI-powered Threat Detection",
+    "SOC Automation and SOAR Platforms",
+    "API Security: Beyond OAuth 2.0",
+    "Container Security: Runtime Protection",
+    "Identity-first Security Architectures",
+    "Post-quantum Cryptography Readiness"
+  ],
+  "Data": [
+    "Data Mesh: Decentralized Data Ownership",
+    "Real-time Analytics with Streaming Pipelines",
+    "Data Contracts for Cross-team Governance",
+    "Vector Databases for Semantic Search",
+    "Data Lakehouse Architecture Patterns",
+    "Data Versioning and Lineage Tracking",
+    "Privacy-preserving Analytics (Differential Privacy)",
+    "Graph Databases for Complex Relationships"
+  ],
+  "Mobile": [
+    "Cross-platform Native: Flutter vs React Native",
+    "Edge ML on Mobile Devices",
+    "Progressive Web Apps: The 2026 Reality",
+    "Mobile DevOps: Automated Testing at Scale",
+    "Battery-efficient Mobile Architecture",
+    "Offline-first Mobile Design Patterns",
+    "Mobile Security: App Hardening Techniques",
+    "Swift 6 and Modern iOS Architecture"
+  ]
+}

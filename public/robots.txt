@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://evofutura.com
+
+# Sitemaps
+Sitemap: https://evofutura.com/sitemap.xml

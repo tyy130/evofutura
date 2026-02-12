@@ -1,26 +1,93 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a; /* Slate 900 */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-plus-jakarta);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-plus-jakarta), sans-serif;
+    color: #020617;
+    letter-spacing: -0.02em;
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Suble tech accents for the light theme */
+.tech-dot {
+  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Code block styling overrides for prose */
+.prose pre {
+  background-color: #020617 !important;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background: transparent !important;
+  color: #e2e8f0 !important;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  padding: 0 !important;
+  display: block;
+}
+
+.prose pre code span {
+  background: transparent !important;
+}
+
+/* Inline code (not in pre blocks) */
+.prose :not(pre) > code {
+  background-color: #f1f5f9;
+  color: #1e40af;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
+.prose :not(pre) > code::before,
+.prose :not(pre) > code::after {
+  content: '' !important;
+}
+
+/* Responsive typography scale using clamp */
+.prose h1 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+}
+
+.prose h2 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.prose h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
 }
