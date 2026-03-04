@@ -1,7 +1,7 @@
 'use client';
 
-import { useTransition, useState } from 'react';
-import { subscribeToNewsletter } from '@/app/actions';
+import { useActionState } from 'react';
+import { subscribeToNewsletter, type SubscribeActionState } from '@/app/actions';
 
 interface NewsletterFormProps {
   location: string;
@@ -9,54 +9,57 @@ interface NewsletterFormProps {
   placeholder?: string;
 }
 
-export default function NewsletterForm({ location, variant = 'dark', placeholder = 'Enter your email' }: NewsletterFormProps) {
-  const [isPending, startTransition] = useTransition();
-  const [status, setStatus] = useState<{ success?: boolean; message?: string } | null>(null);
-
-  const handleSubmit = (formData: FormData) => {
-    formData.append('source', location);
-    startTransition(async () => {
-      const result = await subscribeToNewsletter(formData);
-      setStatus(result);
-    });
-  };
+export default function NewsletterForm({
+  location,
+  variant = 'dark',
+  placeholder = 'Enter your email',
+}: NewsletterFormProps) {
+  const [status, formAction, isPending] = useActionState<SubscribeActionState | null, FormData>(
+    subscribeToNewsletter,
+    null
+  );
 
   const isLight = variant === 'light';
 
   return (
     <div className="w-full">
       {status?.success ? (
-        <div className={`p-4 rounded-xl text-center font-bold animate-fade-in ${isLight ? 'bg-green-100 text-green-800' : 'bg-green-500/20 text-green-300 border border-green-500/30'}`}>
-          ✅ {status.message}
+        <div
+          className={`animate-fade-in rounded-xl p-4 text-center font-bold ${
+            isLight
+              ? 'bg-green-100 text-green-800'
+              : 'border border-green-500/30 bg-green-500/20 text-green-300'
+          }`}
+        >
+          {status.message || 'You are subscribed.'}
         </div>
       ) : (
-        <form action={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-          <input 
+        <form action={formAction} className="flex flex-col gap-3 sm:flex-row">
+          <input type="hidden" name="source" value={location} />
+          <input
             name="email"
-            type="email" 
+            type="email"
             required
             placeholder={placeholder}
-            className={`flex-grow px-5 py-4 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all
-              ${isLight 
-                ? 'bg-white border-slate-200 text-slate-900 placeholder:text-slate-500' 
-                : 'bg-slate-900 border-slate-800 text-white placeholder:text-slate-600'
-              }`}
+            className={`flex-grow rounded-xl border px-5 py-4 text-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-600 ${
+              isLight
+                ? 'border-slate-200 bg-white text-slate-900 placeholder:text-slate-500'
+                : 'border-slate-800 bg-slate-900 text-white placeholder:text-slate-600'
+            }`}
           />
-          <button 
+          <button
             type="submit"
             disabled={isPending}
-            className={`px-8 py-4 rounded-xl font-bold transition-all shadow-lg active:scale-95 text-sm whitespace-nowrap
-              ${isLight 
-                ? 'bg-slate-950 text-white hover:bg-blue-600' 
-                : 'bg-white text-slate-950 hover:bg-blue-50'
-              } ${isPending ? 'opacity-70 cursor-wait' : ''}`}
+            className={`whitespace-nowrap rounded-xl px-8 py-4 text-sm font-bold shadow-lg transition-all active:scale-95 ${
+              isLight ? 'bg-slate-950 text-white hover:bg-blue-600' : 'bg-white text-slate-950 hover:bg-blue-50'
+            } ${isPending ? 'cursor-wait opacity-70' : ''}`}
           >
             {isPending ? 'Processing...' : 'Subscribe'}
           </button>
         </form>
       )}
       {status?.success === false && (
-        <p className="text-red-500 text-xs mt-3 font-bold text-center">{status.message}</p>
+        <p className="mt-3 text-center text-xs font-bold text-red-500">{status.message || 'Subscription failed.'}</p>
       )}
     </div>
   );

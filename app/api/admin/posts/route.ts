@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { parseSerializedTags } from '@/lib/taxonomy';
 
 export async function GET(request: Request) {
   const authHeader = request.headers.get('authorization');
@@ -15,10 +16,17 @@ export async function GET(request: Request) {
       slug: true,
       published: true,
       category: true,
+      type: true,
+      tags: true,
       date: true,
       author: true
     }
   });
 
-  return NextResponse.json({ posts });
+  return NextResponse.json({
+    posts: posts.map(post => ({
+      ...post,
+      tags: parseSerializedTags(post.tags),
+    })),
+  });
 }

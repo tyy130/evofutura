@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { normalizeCategory, normalizePostType, parseSerializedTags, serializeTags } from '@/lib/taxonomy';
 
 export const dynamic = 'force-dynamic';
 
@@ -45,6 +46,7 @@ export async function GET(request: Request, props: { params: Promise<{ id: strin
     return NextResponse.json({
       post: {
         ...post,
+        tags: parseSerializedTags(post.tags).join(', '),
         revisions: revisions
       }
     });
@@ -87,6 +89,9 @@ export async function PUT(request: Request, props: { params: Promise<{ id: strin
         published: body.published,
         slug: body.slug,
         excerpt: body.excerpt,
+        category: normalizeCategory(body.category),
+        type: normalizePostType(body.type),
+        tags: serializeTags(body.tags),
         image: body.image, // Added image field
       }
     });

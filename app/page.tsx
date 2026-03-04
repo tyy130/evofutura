@@ -1,179 +1,278 @@
 import Link from 'next/link';
+import { format } from 'date-fns';
 import SafeImage from '@/components/SafeImage';
 import NewsletterForm from '@/components/NewsletterForm';
-import { getSortedPostsData } from '@/lib/posts';
-import { format } from 'date-fns';
+import { getSortedPostsData, getTaxonomySnapshot, type PostMetadata } from '@/lib/posts';
+import { CATEGORY_META, titleFromSlug } from '@/lib/taxonomy';
+import { getCategoryFallbackImage, getPostImageForDisplay, hasDisplayImage } from '@/lib/images';
 
-export const revalidate = 0;
+export const dynamic = 'force-static';
+
+type LatestTile =
+  | { kind: 'image'; post: PostMetadata }
+  | { kind: 'stack'; posts: PostMetadata[] };
+
+function createLatestTiles(posts: PostMetadata[]): LatestTile[] {
+  const imagePosts = posts.filter(post => hasDisplayImage(post.image));
+  const textPosts = posts.filter(post => !hasDisplayImage(post.image));
+
+  const stacks: LatestTile[] = [];
+  for (let i = 0; i < textPosts.length; i += 3) {
+    stacks.push({ kind: 'stack', posts: textPosts.slice(i, i + 3) });
+  }
+
+  const tiles: LatestTile[] = [];
+  let imageCursor = 0;
+  let stackCursor = 0;
+
+  while (imageCursor < imagePosts.length || stackCursor < stacks.length) {
+    for (let i = 0; i < 2 && imageCursor < imagePosts.length; i += 1) {
+      tiles.push({ kind: 'image', post: imagePosts[imageCursor] });
+      imageCursor += 1;
+    }
+
+    if (stackCursor < stacks.length) {
+      tiles.push(stacks[stackCursor]);
+      stackCursor += 1;
+    }
+
+    if (imageCursor >= imagePosts.length && stackCursor < stacks.length) {
+      tiles.push(stacks[stackCursor]);
+      stackCursor += 1;
+    }
+  }
+
+  return tiles;
+}
 
 export default async function Home() {
-  const posts = await getSortedPostsData();
-  const featuredPost = posts[0];
-  const trendingPosts = posts.slice(1, 5);
-  const latestPosts = posts.slice(5, 11);
+  const [posts, taxonomy] = await Promise.all([getSortedPostsData(), getTaxonomySnapshot()]);
 
-  const categories = ['AI', 'Cloud', 'DevOps', 'WebDev'];
+  const featured = posts[0];
+  const highlights = posts.slice(1, 4);
+  const latest = posts.slice(4, 12);
+  const latestTiles = createLatestTiles(latest);
 
   return (
-    <div className="space-y-32 pb-24">
-      {/* 1. HERO - Clean Editorial Style */}
-      {featuredPost && (
-        <section className="relative group">
-          {/* Mobile Hero: Full-bleed image with title overlay */}
-          <Link href={`/blog/${featuredPost.slug}`} className="block lg:hidden">
-            <div className="relative aspect-[4/5] sm:aspect-[16/9] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-              <SafeImage
-                src={featuredPost.image || ''}
-                alt={featuredPost.title}
-                fill
-                className="object-cover"
-                priority
-                sizes="100vw"
-              />
-              {/* Stronger gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
-              {/* Content overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 space-y-3">
-                <div className="flex items-center space-x-3">
-                  <span className="px-3 py-1 bg-blue-600 rounded-full text-[10px] font-bold uppercase tracking-wider text-white">
-                    Featured
-                  </span>
-                </div>
-                <h1
-                  className="text-2xl sm:text-3xl font-heading font-extrabold tracking-tight leading-tight text-white text-balance"
-                  style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
-                >
-                  {featuredPost.title}
-                </h1>
-                <p
-                  className="text-sm text-slate-200 line-clamp-2 leading-relaxed"
-                  style={{ textShadow: '0 1px 4px rgba(0,0,0,0.4)' }}
-                >
-                  {featuredPost.excerpt}
-                </p>
-                <span className="text-xs text-slate-400">{format(new Date(featuredPost.date), 'MMM d, yyyy')}</span>
+    <div className="space-y-16 pb-12">
+      {featured && (
+        <section className="reveal-up overflow-hidden rounded-[2.2rem] border border-[var(--line)] bg-white/88 p-5 shadow-[0_20px_60px_rgba(7,47,74,0.12)] backdrop-blur-sm sm:p-8">
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-stretch">
+            <div className="space-y-6 lg:col-span-7">
+              <div className="flex flex-wrap items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--muted)]">
+                <span className="rounded-full bg-[var(--c-ink)] px-3 py-1 text-white">Featured</span>
+                <span>{featured.type}</span>
+                <span>•</span>
+                <time dateTime={featured.date}>{format(new Date(featured.date), 'MMMM d, yyyy')}</time>
               </div>
-            </div>
-          </Link>
 
-          {/* Desktop Hero: Side-by-side layout */}
-          <div className="hidden lg:grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="flex items-center space-x-3 text-blue-600 font-bold tracking-tight uppercase text-[10px]">
-                <span className="w-8 h-px bg-blue-600"></span>
-                <span>Featured Analysis</span>
+              <h1 className="text-4xl font-bold leading-[1.04] sm:text-5xl lg:text-6xl">{featured.title}</h1>
+              <p className="max-w-2xl text-lg leading-relaxed text-[var(--muted)]">{featured.excerpt}</p>
+
+              <div className="flex flex-wrap items-center gap-3">
+                {featured.tags.slice(0, 4).map(tag => (
+                  <Link
+                    key={tag}
+                    href={`/tag/${tag}`}
+                    className="chip rounded-full px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em]"
+                  >
+                    {titleFromSlug(tag)}
+                  </Link>
+                ))}
               </div>
-              <h1 className="text-7xl font-heading font-extrabold tracking-tighter leading-[1.05] text-slate-950 text-balance">
-                {featuredPost.title}
-              </h1>
-              <p className="text-xl text-slate-600 max-w-xl leading-relaxed font-medium">
-                {featuredPost.excerpt}
-              </p>
-              <div className="flex items-center space-x-6 pt-4">
+
+              <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
-                  href={`/blog/${featuredPost.slug}`}
-                  className="bg-slate-950 text-white px-10 py-4 rounded-full font-bold hover:bg-blue-600 transition-all shadow-xl shadow-slate-200"
+                  href={`/blog/${featured.slug}`}
+                  className="rounded-full bg-[var(--c-ink)] px-6 py-3 text-xs font-bold uppercase tracking-[0.16em] text-white transition-colors hover:bg-[var(--c-accent)]"
                 >
-                  Read Article
+                  Read Analysis
                 </Link>
-                <span className="text-slate-400 font-mono text-sm">
-                  {format(new Date(featuredPost.date), 'MMM d, yyyy')}
-                </span>
+                <Link
+                  href={`/category/${featured.category.toLowerCase()}`}
+                  className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--c-accent)] hover:underline"
+                >
+                  More in {featured.category}
+                </Link>
               </div>
             </div>
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-slate-200 shadow-2xl shadow-slate-200/50">
+
+            <div className="relative min-h-[300px] overflow-hidden rounded-[1.6rem] border border-[var(--line)] lg:col-span-5">
               <SafeImage
-                src={featuredPost.image || ''}
-                alt={featuredPost.title}
+                src={getPostImageForDisplay(featured.image, featured.category)}
+                alt={featured.title}
+                fallbackSrc={getCategoryFallbackImage(featured.category)}
                 fill
                 className="object-cover"
                 priority
-                sizes="50vw"
+                sizes="(max-width: 1024px) 100vw, 42vw"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#041422]/70 via-transparent to-transparent" />
             </div>
           </div>
         </section>
       )}
 
-      {/* 2. TRENDING - High Contrast Minimalist */}
-      <section>
-        <div className="flex items-center justify-between mb-12 border-b border-slate-100 pb-6">
-          <h2 className="text-2xl font-heading font-bold text-slate-950 tracking-tight">Trending</h2>
-          <Link href="/archive" className="text-sm font-bold text-slate-400 hover:text-blue-600 transition-colors">Archive →</Link>
+      <section className="reveal-up reveal-delay-1 grid gap-5 md:grid-cols-3">
+        {highlights.map((post, index) => (
+          <article key={post.slug} className="editorial-card rounded-3xl p-5 transition-transform duration-200 hover:-translate-y-1">
+            <div className="mb-4 flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
+              <span>{post.type}</span>
+              <span>{format(new Date(post.date), 'MMM d')}</span>
+            </div>
+            <h2 className="text-2xl font-bold leading-tight">
+              <Link href={`/blog/${post.slug}`} className="hover:text-[var(--c-accent)]">
+                {post.title}
+              </Link>
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] line-clamp-3">{post.excerpt}</p>
+            <div className="mt-5 flex items-center justify-between">
+              <Link
+                href={`/category/${post.category.toLowerCase()}`}
+                className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--c-accent)]"
+              >
+                {post.category}
+              </Link>
+              <span className="text-xs text-slate-400">#{index + 1}</span>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="reveal-up reveal-delay-2 grid gap-6 lg:grid-cols-12">
+        <div className="lg:col-span-8">
+          <div className="mb-4 flex items-center justify-between border-b border-[var(--line)] pb-4">
+            <h3 className="text-3xl font-bold">Latest Dispatches</h3>
+            <Link href="/archive" className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--c-accent)] hover:underline">
+              Open Archive
+            </Link>
+          </div>
+
+          <div className="grid items-start gap-5 sm:grid-cols-2">
+            {latestTiles.map((tile, index) =>
+              tile.kind === 'image' ? (
+                <article key={tile.post.slug} className="editorial-card self-start rounded-3xl p-4">
+                  <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--surface-soft)]">
+                    <SafeImage
+                      src={tile.post.image!}
+                      alt={tile.post.title}
+                      fallbackSrc={getCategoryFallbackImage(tile.post.category)}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, 48vw"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
+                      <span>{tile.post.type}</span>
+                      <span>{format(new Date(tile.post.date), 'MMM d')}</span>
+                    </div>
+                    <h4 className="text-2xl font-bold leading-tight">
+                      <Link href={`/blog/${tile.post.slug}`} className="hover:text-[var(--c-accent)]">
+                        {tile.post.title}
+                      </Link>
+                    </h4>
+                    <p className="line-clamp-2 text-sm text-[var(--muted)]">{tile.post.excerpt}</p>
+                  </div>
+                </article>
+              ) : (
+                <article key={`stack-${index}`} className="editorial-card self-start rounded-3xl p-4">
+                  <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
+                    Brief Stack
+                  </div>
+                  <div className="divide-y divide-[var(--line)] rounded-2xl border border-[var(--line)] bg-white/80">
+                    {tile.posts.map(post => (
+                      <div key={post.slug} className="space-y-2 p-4">
+                        <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
+                          <span>{post.type}</span>
+                          <span>{format(new Date(post.date), 'MMM d')}</span>
+                        </div>
+                        <h4 className="text-xl font-bold leading-tight">
+                          <Link href={`/blog/${post.slug}`} className="hover:text-[var(--c-accent)]">
+                            {post.title}
+                          </Link>
+                        </h4>
+                        <p className="line-clamp-2 text-sm text-[var(--muted)]">{post.excerpt}</p>
+                      </div>
+                    ))}
+                  </div>
+                </article>
+              )
+            )}
+          </div>
         </div>
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {trendingPosts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="group space-y-5">
-              <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
-                <SafeImage
-                  src={post.image || ''}
-                  alt={post.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                />
-              </div>
-              <div className="space-y-2">
-                <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest">{post.category}</span>
-                <h3 className="text-xl font-bold leading-tight text-slate-950 group-hover:text-blue-600 transition-colors">
-                  {post.title}
-                </h3>
-              </div>
+
+        <aside className="space-y-6 lg:col-span-4">
+          <div className="editorial-card rounded-3xl p-5">
+            <h4 className="text-xl font-bold">Browse by Format</h4>
+            <div className="mt-4 space-y-3">
+              {taxonomy.types.map(type => (
+                <Link
+                  key={type.slug}
+                  href={`/type/${type.slug}`}
+                  className="flex items-center justify-between rounded-xl border border-[var(--line)] px-4 py-3 transition-colors hover:border-[var(--c-accent)]"
+                >
+                  <span className="text-sm font-semibold">{type.name}</span>
+                  <span className="text-xs font-bold uppercase tracking-[0.1em] text-[var(--muted)]">{type.count}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="editorial-card rounded-3xl p-5">
+            <h4 className="text-xl font-bold">Tag Radar</h4>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {taxonomy.tags.slice(0, 18).map(tag => (
+                <Link
+                  key={tag.slug}
+                  href={`/tag/${tag.slug}`}
+                  className="chip rounded-full px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em]"
+                >
+                  {titleFromSlug(tag.slug)}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section className="reveal-up reveal-delay-3 rounded-[2rem] border border-[var(--line)] bg-white/85 p-6 sm:p-8">
+        <div className="mb-6 flex items-end justify-between gap-4 border-b border-[var(--line)] pb-4">
+          <div>
+            <h3 className="text-3xl font-bold">Category Matrix</h3>
+            <p className="mt-1 text-sm text-[var(--muted)]">Coverage map across AI, infrastructure, and future systems.</p>
+          </div>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {taxonomy.categories.map(category => (
+            <Link
+              key={category.slug}
+              href={`/category/${category.slug}`}
+              className="rounded-2xl border border-[var(--line)] bg-white p-4 transition-transform duration-200 hover:-translate-y-1"
+            >
+              <div className="mb-3 h-1.5 w-14 rounded-full" style={{ background: category.accent }} />
+              <p className="text-lg font-bold">{category.name}</p>
+              <p className="mt-1 text-xs leading-relaxed text-[var(--muted)]">
+                {CATEGORY_META[category.name]?.description || 'Technical analysis and editorial perspective.'}
+              </p>
+              <p className="mt-3 text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">{category.count} posts</p>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* 3. RECENT ARTICLES - Clean Magazine Feed */}
-      <section>
-        <div className="grid lg:grid-cols-3 gap-24">
-          <div className="lg:col-span-2 space-y-16">
-            <h2 className="text-2xl font-heading font-bold text-slate-950 border-b border-slate-100 pb-6">Recent Articles</h2>
-            {latestPosts.slice(0, 5).map((post) => (
-              <article key={post.slug} className="group flex flex-col md:flex-row gap-10 items-center border-b border-slate-50 pb-16 last:border-0">
-                <div className="relative w-full md:w-64 h-48 flex-shrink-0 rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
-                  <SafeImage src={post.image || ''} alt={post.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 256px" />
-                </div>
-                <div className="space-y-4">
-                  <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">{post.category}</span>
-                  <Link href={`/blog/${post.slug}`}>
-                    <h3 className="text-3xl font-heading font-bold text-slate-950 group-hover:text-blue-600 transition-colors leading-tight">
-                      {post.title}
-                    </h3>
-                  </Link>
-                  <p className="text-slate-600 leading-relaxed line-clamp-2">
-                    {post.excerpt}
-                  </p>
-                  <span className="text-xs text-slate-400">{format(new Date(post.date), 'MMM d')}</span>
-                </div>
-              </article>
-            ))}
+      <section className="reveal-up rounded-[2rem] border border-[#0a314f] bg-[#071b2d] p-8 text-white sm:p-10">
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
+          <div className="space-y-3">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-300">Newsletter</p>
+            <h3 className="text-4xl font-bold text-white">Weekly Tech Intelligence</h3>
+            <p className="max-w-xl text-sm leading-relaxed text-slate-300">
+              Get one high-signal brief every week across AI, platform engineering, and frontier technology.
+            </p>
           </div>
-
-          {/* SIDEBAR */}
-          <div className="space-y-20">
-            <div className="space-y-8">
-              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-4">Topics</h3>
-              <div className="flex flex-wrap gap-2">
-                {categories.map(cat => (
-                  <Link
-                    key={cat}
-                    href={`/category/${cat.toLowerCase()}`}
-                    className="px-4 py-2 rounded-full border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-950 hover:text-white transition-all"
-                  >
-                    {cat}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-slate-50 rounded-3xl p-10 border border-slate-100 space-y-6">
-              <h3 className="text-2xl font-heading font-bold text-slate-950">Newsletter</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Join 50k+ readers receiving weekly analysis on the next wave of technology.
-              </p>
-              <NewsletterForm location="home-sidebar" variant="light" />
-            </div>
+          <div>
+            <NewsletterForm location="home-hero-newsletter" variant="dark" placeholder="name@company.com" />
           </div>
         </div>
       </section>

@@ -1,72 +1,75 @@
 import Link from 'next/link';
+import { format } from 'date-fns';
 import SafeImage from '@/components/SafeImage';
 import { getSortedPostsData } from '@/lib/posts';
-import { format } from 'date-fns';
+import { getCategoryFallbackImage, getPostImageForDisplay } from '@/lib/images';
 
 export const metadata = {
   title: 'Archive | EvoFutura',
-  description: 'The complete library of autonomous tech intelligence.',
+  description: 'Complete archive of EvoFutura coverage.',
 };
 
 export default async function ArchivePage() {
   const posts = await getSortedPostsData();
 
-  // Group by year for a better archive experience
-  const postsByYear = posts.reduce((acc, post) => {
-    const year = new Date(post.date).getFullYear();
+  const postsByYear = posts.reduce<Record<string, typeof posts>>((acc, post) => {
+    const year = new Date(post.date).getFullYear().toString();
     if (!acc[year]) acc[year] = [];
     acc[year].push(post);
     return acc;
-  }, {} as Record<string, typeof posts>);
+  }, {});
 
   const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 
   return (
-    <div className="max-w-5xl mx-auto space-y-16 pb-20">
-      <header className="border-b border-slate-100 pb-12">
-        <h1 className="text-5xl md:text-7xl font-heading font-extrabold text-slate-950 tracking-tighter mb-6">
-          Intelligence Archive
-        </h1>
-        <p className="text-xl text-slate-500 font-medium max-w-2xl">
-          The complete repository of {posts.length} architectural deep dives and engineering reports.
+    <div className="space-y-12 pb-12">
+      <header className="reveal-up rounded-[2rem] border border-[var(--line)] bg-white/88 p-7 sm:p-10">
+        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--c-accent)]">Archive</p>
+        <h1 className="mt-2 text-5xl font-bold sm:text-6xl">Intelligence Library</h1>
+        <p className="mt-3 max-w-2xl text-[var(--muted)]">
+          {posts.length} published entries across AI, cloud, security, and future engineering systems.
         </p>
       </header>
 
-      <div className="space-y-24">
-        {years.map((year) => (
-          <section key={year} className="space-y-10">
-            <h2 className="text-8xl font-heading font-black text-slate-100 select-none -ml-1">
-              {year}
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-              {postsByYear[year].map((post) => (
-                <article key={post.slug} className="group space-y-5">
-                  <div className="relative aspect-[3/2] rounded-2xl overflow-hidden border border-slate-100 bg-slate-50 shadow-sm">
-                    <SafeImage
-                      src={post.image || ''}
-                      alt={post.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
+      {years.map(year => (
+        <section key={year} className="reveal-up reveal-delay-1 space-y-5">
+          <div className="flex items-end justify-between border-b border-[var(--line)] pb-3">
+            <h2 className="text-4xl font-bold">{year}</h2>
+            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
+              {postsByYear[year].length} posts
+            </span>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {postsByYear[year].map(post => (
+              <article key={post.slug} className="editorial-card rounded-2xl p-4">
+                <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--surface-soft)]">
+                  <SafeImage
+                    src={getPostImageForDisplay(post.image, post.category)}
+                    alt={post.title}
+                    fallbackSrc={getCategoryFallbackImage(post.category)}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 48vw, 32vw"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
+                    <span>{post.type}</span>
+                    <span>{format(new Date(post.date), 'MMM d')}</span>
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between text-xs font-bold uppercase tracking-widest">
-                      <span className="text-blue-600">{post.category}</span>
-                      <span className="text-slate-400">{format(new Date(post.date), 'MMM d')}</span>
-                    </div>
-                    <h3 className="text-xl font-heading font-bold text-slate-950 leading-tight group-hover:text-blue-600 transition-colors">
-                      <Link href={`/blog/${post.slug}`}>
-                        {post.title}
-                      </Link>
-                    </h3>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-        ))}
-      </div>
+                  <h3 className="text-2xl font-bold leading-tight">
+                    <Link href={`/blog/${post.slug}`} className="hover:text-[var(--c-accent)]">
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="line-clamp-2 text-sm text-[var(--muted)]">{post.excerpt}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
     </div>
   );
 }

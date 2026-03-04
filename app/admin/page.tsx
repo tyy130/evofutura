@@ -10,6 +10,8 @@ type Post = {
   title: string;
   slug: string;
   category: string;
+  type: string;
+  tags: string[];
   date: string;
   published: boolean;
 };
@@ -26,6 +28,9 @@ type EditingPost = {
   id: string;
   title: string;
   slug: string;
+  category: string;
+  type: string;
+  tags: string;
   content: string;
   excerpt: string;
   image: string | null;
@@ -304,6 +309,7 @@ export default function AdminPage() {
                 <tr>
                   <th className="px-8 py-4 font-bold text-slate-400 uppercase text-[10px] tracking-widest">Article</th>
                   <th className="px-8 py-4 font-bold text-slate-400 uppercase text-[10px] tracking-widest">Category</th>
+                  <th className="px-8 py-4 font-bold text-slate-400 uppercase text-[10px] tracking-widest">Type</th>
                   <th className="px-8 py-4 font-bold text-slate-400 uppercase text-[10px] tracking-widest">Status</th>
                   <th className="px-8 py-4 font-bold text-slate-400 uppercase text-[10px] tracking-widest text-right">Actions</th>
                 </tr>
@@ -311,7 +317,7 @@ export default function AdminPage() {
               <tbody className="divide-y divide-slate-50">
                 {posts.length === 0 ? (
                   <tr>
-                    <td colSpan={4} className="px-8 py-20 text-center text-slate-400 italic">No articles found in database.</td>
+                    <td colSpan={5} className="px-8 py-20 text-center text-slate-400 italic">No articles found in database.</td>
                   </tr>
                 ) : (
                   posts.map((post) => (
@@ -319,6 +325,9 @@ export default function AdminPage() {
                       <td className="px-8 py-5 font-bold text-slate-900">{post.title}</td>
                       <td className="px-8 py-5">
                         <span className="px-2 py-1 rounded bg-blue-50 text-blue-600 text-[10px] font-bold uppercase">{post.category}</span>
+                      </td>
+                      <td className="px-8 py-5">
+                        <span className="px-2 py-1 rounded bg-cyan-50 text-cyan-700 text-[10px] font-bold uppercase">{post.type}</span>
                       </td>
                       <td className="px-8 py-5">
                         <div className="flex items-center gap-2">
@@ -410,14 +419,47 @@ export default function AdminPage() {
               />
             </div>
 
-            <div className="flex gap-6 items-center">
-              <div className="flex-grow space-y-1">
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4 items-end">
+              <div className="xl:col-span-2 space-y-1">
                 <label className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Slug URL</label>
                 <input
                   value={editingPost.slug}
                   onChange={e => setEditingPost({ ...editingPost, slug: e.target.value })}
                   className="text-xs font-mono text-blue-600 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100 w-full focus:outline-none"
                   placeholder="slug-url-here"
+                />
+              </div>
+              <div className="space-y-1">
+                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Category</label>
+                <input
+                  value={editingPost.category}
+                  onChange={e => setEditingPost({ ...editingPost, category: e.target.value })}
+                  className="text-xs font-bold bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 focus:outline-none block w-full"
+                  placeholder="AI"
+                />
+              </div>
+              <div className="space-y-1">
+                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Type</label>
+                <select
+                  value={editingPost.type}
+                  onChange={e => setEditingPost({ ...editingPost, type: e.target.value })}
+                  className="text-xs font-bold bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 focus:outline-none block w-full"
+                >
+                  {['Deep Dive', 'Signal Brief', 'Explainer', 'Opinion', 'Build Guide'].map(type => (
+                    <option key={type} value={type}>{type}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 items-end">
+              <div className="space-y-1">
+                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Tags (comma separated)</label>
+                <input
+                  value={editingPost.tags}
+                  onChange={e => setEditingPost({ ...editingPost, tags: e.target.value })}
+                  className="text-xs font-mono text-slate-700 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100 w-full focus:outline-none"
+                  placeholder="ai-agents, llm, safety"
                 />
               </div>
               <div className="space-y-1">

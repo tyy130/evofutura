@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
 model Post {
@@ -14,6 +15,8 @@ model Post {
   excerpt   String
   content   String
   category  String
+  type      String   @default("Deep Dive")
+  tags      String   @default("")
   author    String
   image     String?
   date      DateTime @default(now())
@@ -21,6 +24,8 @@ model Post {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   revisions PostRevision[]
+  views     PostView[]
+  comments  Comment[]
 }
 
 model PostRevision {
@@ -39,4 +44,64 @@ model Subscriber {
   source    String?  @default("website")
   active    Boolean  @default(true)
   createdAt DateTime @default(now())
+  deliveries NewsletterDelivery[]
+}
+
+model PostView {
+  id        String   @id @default(cuid())
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@index([postId, createdAt])
+  @@index([createdAt])
+}
+
+model NewsletterIssue {
+  id               String               @id @default(cuid())
+  weekKey          String               @unique
+  subject          String
+  intro            String
+  exclusiveTitle   String?
+  exclusiveContent String?
+  status           String               @default("queued")
+  totalRecipients  Int                  @default(0)
+  sentCount        Int                  @default(0)
+  failedCount      Int                  @default(0)
+  createdAt        DateTime             @default(now())
+  sentAt           DateTime?
+  deliveries       NewsletterDelivery[]
+}
+
+model NewsletterDelivery {
+  id           String          @id @default(cuid())
+  issueId      String
+  subscriberId String
+  status       String          @default("pending")
+  error        String?
+  sentAt       DateTime?
+  createdAt    DateTime        @default(now())
+  issue        NewsletterIssue @relation(fields: [issueId], references: [id], onDelete: Cascade)
+  subscriber   Subscriber      @relation(fields: [subscriberId], references: [id], onDelete: Cascade)
+
+  @@unique([issueId, subscriberId])
+  @@index([issueId, status])
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  name      String
+  email     String?
+  content   String
+  source    String   @default("web")
+  status    String   @default("approved")
+  ipHash    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([postId, status, createdAt])
+  @@index([createdAt])
+  @@index([ipHash, createdAt])
 }

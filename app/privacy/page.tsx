@@ -38,7 +38,7 @@ export default function PrivacyPage() {
 
         <h3>2. How We Use Your Information</h3>
         <p>
-          Your data powers the following autonomous and manual workflows:
+          Your data is used for the following purposes:
         </p>
         <ul>
           <li><strong>Delivery:</strong> Sending you the content you requested.</li>

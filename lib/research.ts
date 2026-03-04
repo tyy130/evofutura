@@ -1,6 +1,3 @@
-import { JSDOM } from 'jsdom';
-import { Readability } from '@mozilla/readability';
-
 export interface ResearchClaim {
     text: string;
     source_url: string;
@@ -15,7 +12,8 @@ export interface ResearchResult {
 }
 
 /**
- * Fetch and extract readable content from a URL
+ * Serverless-safe fallback extraction:
+ * strip scripts/styles/tags and return normalized plain text.
  */
 async function fetchAndExtract(url: string): Promise<{ title: string; content: string } | null> {
     try {
@@ -32,19 +30,35 @@ async function fetchAndExtract(url: string): Promise<{ title: string; content: s
         }
 
         const html = await response.text();
-        const dom = new JSDOM(html, { url });
-        const reader = new Readability(dom.window.document);
-        const article = reader.parse();
+        const titleMatch = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+        const title = (titleMatch?.[1] || 'Untitled')
+            .replace(/\s+/g, ' ')
+            .trim()
+            .slice(0, 240);
 
-        if (!article) {
-            console.warn(`[Research] Could not parse ${url}`);
+        const withoutNoise = html
+            .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+            .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+            .replace(/<noscript[\s\S]*?<\/noscript>/gi, ' ');
+
+        const text = withoutNoise
+            .replace(/<[^>]+>/g, ' ')
+            .replace(/&nbsp;/gi, ' ')
+            .replace(/&amp;/gi, '&')
+            .replace(/&quot;/gi, '"')
+            .replace(/&#39;/gi, "'")
+            .replace(/&lt;/gi, '<')
+            .replace(/&gt;/gi, '>')
+            .replace(/\s+/g, ' ')
+            .trim()
+            .slice(0, 8000);
+
+        if (text.length < 400) {
+            console.warn(`[Research] Could not extract enough text from ${url}`);
             return null;
         }
 
-        return {
-            title: article.title || 'Untitled',
-            content: (article.textContent || '').slice(0, 5000), // Limit to 5k chars
-        };
+        return { title, content: text };
     } catch (err) {
         console.warn(`[Research] Error fetching ${url}: ${err}`);
         return null;

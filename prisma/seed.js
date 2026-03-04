@@ -2,6 +2,35 @@ const { PrismaClient } = require('@prisma/client');
 require('dotenv').config();
 const prisma = new PrismaClient();
 
+const categoryTypes = {
+  AI: 'Deep Dive',
+  ML: 'Explainer',
+  Cloud: 'Build Guide',
+  DevOps: 'Build Guide',
+  WebDev: 'Explainer',
+};
+
+function slugify(value) {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9\\s-]/g, '')
+    .trim()
+    .replace(/\\s+/g, '-')
+    .replace(/-+/g, '-');
+}
+
+function serializeTags(tags) {
+  const clean = Array.from(
+    new Set(
+      tags
+        .map(slugify)
+        .filter(Boolean)
+    )
+  );
+  if (clean.length === 0) return '';
+  return `|${clean.join('|')}|`;
+}
+
 // Verified Unsplash Image IDs
 const images = {
   "AI": [
@@ -66,6 +95,8 @@ async function main() {
           excerpt: `A comprehensive guide to ${title} and its impact on the modern technology landscape.`,
           content: `# ${title}\n\nThis is a deep dive into ${title}.\n\n![Header](${imgUrl})\n\n## Future Outlook\nThe industry is moving towards...`,
           category: category,
+          type: categoryTypes[category] || 'Deep Dive',
+          tags: serializeTags([category, title, 'future-tech', 'engineering']),
           author: "EvoBot",
           image: imgUrl,
           date: date,

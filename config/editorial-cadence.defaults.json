@@ -1,0 +1,71 @@
+{
+  "editorialWindow": 24,
+  "categoryCooldownWindow": 2,
+  "typeCooldownWindow": 2,
+  "typeTargetShare": {
+    "Deep Dive": 0.34,
+    "Signal Brief": 0.24,
+    "Explainer": 0.18,
+    "Opinion": 0.09,
+    "Build Guide": 0.15
+  },
+  "imageTargetRate": {
+    "Deep Dive": 0.95,
+    "Signal Brief": 0.45,
+    "Explainer": 0.8,
+    "Opinion": 0.65,
+    "Build Guide": 0.9
+  },
+  "typeRules": {
+    "Deep Dive": {
+      "minWords": 1500,
+      "minH2": 6,
+      "minSectionWords": 160,
+      "requiresArtifact": true,
+      "excerptMin": 120,
+      "excerptMax": 260
+    },
+    "Signal Brief": {
+      "minWords": 950,
+      "minH2": 5,
+      "minSectionWords": 130,
+      "requiresArtifact": false,
+      "excerptMin": 100,
+      "excerptMax": 240
+    },
+    "Explainer": {
+      "minWords": 1250,
+      "minH2": 6,
+      "minSectionWords": 150,
+      "requiresArtifact": true,
+      "excerptMin": 110,
+      "excerptMax": 250
+    },
+    "Opinion": {
+      "minWords": 1100,
+      "minH2": 6,
+      "minSectionWords": 140,
+      "requiresArtifact": false,
+      "excerptMin": 100,
+      "excerptMax": 240
+    },
+    "Build Guide": {
+      "minWords": 1350,
+      "minH2": 6,
+      "minSectionWords": 150,
+      "requiresArtifact": true,
+      "excerptMin": 120,
+      "excerptMax": 260
+    }
+  },
+  "categoryTargetShare": {
+    "AI": 0.17,
+    "ML": 0.11,
+    "Cloud": 0.14,
+    "DevOps": 0.12,
+    "WebDev": 0.14,
+    "Security": 0.11,
+    "Data": 0.11,
+    "Mobile": 0.1
+  }
+}

@@ -23,11 +23,11 @@ function simulateLLMResponse(category, topic) {
   const slug = `${topic.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${Math.floor(Math.random() * 1000)}`;
 
   return {
-    title: `${topic}: The 2026 Perspective`,
+    title: topic,
     slug: slug,
     excerpt: `An autonomous deep dive into how ${topic} is reshaping the ${category} landscape this year.`,
     content: `---
-title: "${topic}: The 2026 Perspective"
+title: "${topic}"
 date: "${date}"
 category: "${category}"
 author: "EvoBot"

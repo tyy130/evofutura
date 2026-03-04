@@ -35,9 +35,13 @@ CURRENT DATE: ${currentDate}
 - Return ONLY Markdown content.
 - First line: A punchy 1-sentence excerpt (max 200 chars) that hooks expert readers.
 - Use ## headers for major sections.
+- Use ### subheads inside major sections to improve scanability.
 - Include at least one code example or architecture diagram.
+- Include at least two bullet/numbered lists across the full piece.
+- Include at least one blockquote pull-quote (>) and one markdown comparison table.
 - Bold (**) key terms on first use.
-- Keep paragraphs to 3-4 sentences max.
+- Keep paragraphs to 3-4 sentences max and below ~90 words.
+- Avoid walls of text: each major section should mix paragraph + list/quote/table/code when relevant.
 `;
 
 export const generateTopicPrompt = (category: string, topic: string) => `
@@ -70,9 +74,70 @@ Actionable steps. "If you're starting tomorrow, do X first."
 ### 6. THE BOTTOM LINE
 One sentence summary. No fluff.
 
+## Presentation Requirements
+- Use at least 5 H2 sections and 3+ H3 subheads.
+- Every H2 section should include at least one non-paragraph element:
+  - bullet list,
+  - numbered sequence,
+  - blockquote,
+  - markdown table,
+  - or code/config snippet.
+- Include a **Decision Matrix** table with clear trade-offs.
+- Include one pull-quote that sounds like an operator insight.
+- Keep section rhythm varied; do not output two large paragraphs back-to-back as the dominant pattern.
+
 ---
 Context: Q1 2026. Write as if advising a peer, not teaching a student.
 `;
+
+export type WritingEngineId = 'systems-analyst' | 'operator-journal' | 'research-desk';
+
+export interface WritingEngineProfile {
+  id: WritingEngineId;
+  name: string;
+  description: string;
+  temperature: number;
+  directives: string;
+}
+
+export const WRITING_ENGINES: WritingEngineProfile[] = [
+  {
+    id: 'systems-analyst',
+    name: 'Systems Analyst',
+    description: 'Structured, architecture-first writing with decisive recommendations and tight operational framing.',
+    temperature: 0.38,
+    directives: `ENGINE STYLE: Systems Analyst
+- Prioritize architecture decomposition and explicit decision criteria.
+- Use crisp, dense prose with minimal narrative flourish.
+- Favor matrices, implementation constraints, and production gates over storytelling.
+- Include a short "Constraint Ledger" subsection in at least one H2 section.
+- Keep claims tightly scoped; avoid anecdotal framing unless tied to an explicit decision.`,
+  },
+  {
+    id: 'operator-journal',
+    name: 'Operator Journal',
+    description: 'Field-informed writing that blends implementation detail with operational context and incident-aware lessons.',
+    temperature: 0.5,
+    directives: `ENGINE STYLE: Operator Journal
+- Write like a senior operator explaining what actually works in production.
+- Include concrete "what failed / what changed" framing where relevant.
+- Keep the tone grounded and practical, but slightly more narrative than Systems Analyst.
+- Include one "Runbook Notes" or "Incident Pattern" subsection with pragmatic operator language.
+- Avoid abstract theory unless directly tied to an action teams can execute this week.`,
+  },
+  {
+    id: 'research-desk',
+    name: 'Research Desk',
+    description: 'Evidence-forward writing with comparative analysis, benchmark framing, and citation discipline.',
+    temperature: 0.44,
+    directives: `ENGINE STYLE: Research Desk
+- Lead with evidence quality, benchmark interpretation, and comparative framing.
+- Distinguish clearly between measured data, inference, and forward-looking assumptions.
+- Emphasize trade-off quantification and reproducible evaluation criteria.
+- Add one "Evidence Grade" style subsection that separates strong signal from tentative signal.
+- Keep tone analytical and explicit about confidence levels.`,
+  },
+];
 
 // Category-specific tone modifiers
 export const CATEGORY_TONES: Record<string, string> = {

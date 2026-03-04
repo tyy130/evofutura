@@ -1,162 +1,134 @@
 import Link from 'next/link';
+import { format } from 'date-fns';
+import { notFound } from 'next/navigation';
 import SafeImage from '@/components/SafeImage';
 import NewsletterForm from '@/components/NewsletterForm';
 import { getPostsByCategory } from '@/lib/posts';
-import { format } from 'date-fns';
-import { notFound } from 'next/navigation';
+import { CATEGORY_META, titleFromSlug } from '@/lib/taxonomy';
+import { getCategoryFallbackImage, getPostImageForDisplay } from '@/lib/images';
 
-// Architecture: Map URL slugs to Database Categories
-const categoryMap: Record<string, string> = {
-  'ai': 'AI',
-  'ml': 'ML',
-  'cloud': 'Cloud',
-  'devops': 'DevOps',
-  'webdev': 'WebDev',
-  'security': 'Security',
-  'data': 'Data',
-  'mobile': 'Mobile'
-};
-
-const categoryDescriptions: Record<string, string> = {
-  'AI': 'Artificial Intelligence, Neural Networks, and the rise of Autonomous Agents.',
-  'ML': 'Machine Learning pipelines, data engineering, and predictive modeling.',
-  'Cloud': 'Serverless architecture, distributed systems, and edge computing.',
-  'DevOps': 'CI/CD, Infrastructure as Code, and Site Reliability Engineering.',
-  'WebDev': 'Modern frontend frameworks, WASM, and the future of the browser.',
-  'Security': 'Zero-trust architecture, threat detection, and supply chain security.',
-  'Data': 'Data mesh, vector databases, real-time analytics, and data governance.',
-  'Mobile': 'Cross-platform development, edge ML on devices, and offline-first patterns.'
-};
+const categorySlugs = Object.keys(CATEGORY_META).map(category => category.toLowerCase());
 
 export async function generateStaticParams() {
-  const categories = Object.keys(categoryMap);
-  return categories.map((slug) => ({
-    slug: slug,
-  }));
+  return categorySlugs.map(slug => ({ slug }));
 }
 
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const dbCategory = categoryMap[slug.toLowerCase()];
+  const categoryName = Object.keys(CATEGORY_META).find(category => category.toLowerCase() === slug);
 
-  if (!dbCategory) {
+  if (!categoryName) {
     notFound();
   }
 
-  const posts = await getPostsByCategory(dbCategory);
+  const posts = await getPostsByCategory(categoryName);
 
   if (posts.length === 0) {
     return (
-      <div className="min-h-[50vh] flex flex-col items-center justify-center text-center space-y-4">
-        <h1 className="text-4xl font-heading font-bold text-slate-950">{dbCategory}</h1>
-        <p className="text-slate-500">Intelligence gathering in progress. No data streams available yet.</p>
-        <Link href="/" className="text-blue-600 font-bold hover:underline">Return to Command</Link>
+      <div className="mx-auto max-w-3xl rounded-3xl border border-[var(--line)] bg-white/85 p-12 text-center">
+        <h1 className="text-5xl font-bold">{categoryName}</h1>
+        <p className="mt-4 text-[var(--muted)]">No posts are published for this category yet.</p>
+        <Link href="/" className="mt-6 inline-block text-sm font-bold uppercase tracking-[0.16em] text-[var(--c-accent)]">
+          Back Home
+        </Link>
       </div>
     );
   }
 
-  const featured = posts[0];
-  const grid = posts.slice(1);
+  const [featured, ...rest] = posts;
 
   return (
-    <div className="space-y-24 pb-20">
-      {/* 1. TOPIC HEADER */}
-      <header className="space-y-8 border-b border-slate-100 pb-12">
-        <div className="flex items-center space-x-3 text-xs font-bold text-blue-600 uppercase tracking-widest">
-          <Link href="/" className="hover:text-slate-950 transition-colors">Home</Link>
-          <span className="text-slate-300">/</span>
-          <span>Topic Hub</span>
-        </div>
-        <div className="max-w-3xl">
-          <h1 className="text-6xl md:text-8xl font-heading font-extrabold text-slate-950 tracking-tighter mb-6">
-            {dbCategory}
-          </h1>
-          <p className="text-xl text-slate-500 font-medium leading-relaxed">
-            {categoryDescriptions[dbCategory] || `Deep dive analysis into ${dbCategory}.`}
-          </p>
-        </div>
+    <div className="space-y-12">
+      <header className="reveal-up rounded-[2rem] border border-[var(--line)] bg-white/88 p-7 sm:p-10">
+        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--c-accent)]">Category Hub</p>
+        <h1 className="mt-2 text-5xl font-bold sm:text-6xl">{categoryName}</h1>
+        <p className="mt-4 max-w-2xl text-base text-[var(--muted)]">{CATEGORY_META[categoryName].description}</p>
       </header>
 
-      {/* 2. FEATURED IN CATEGORY */}
-      {featured && (
-        <section className="group grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-8 relative aspect-[16/9] rounded-3xl overflow-hidden border border-slate-200 shadow-2xl">
-            <SafeImage
-              src={featured.image || ''}
-              alt={featured.title}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              priority
-              sizes="(max-width: 1024px) 100vw, 66vw"
-            />
-          </div>
-          <div className="lg:col-span-4 space-y-6">
-            <span className="inline-block px-3 py-1 rounded bg-slate-100 text-slate-950 text-xs font-bold uppercase tracking-widest">
-              Top Story
-            </span>
-            <h2 className="text-3xl font-heading font-bold text-slate-950 leading-tight group-hover:text-blue-600 transition-colors">
-              <Link href={`/blog/${featured.slug}`}>
-                {featured.title}
-              </Link>
-            </h2>
-            <p className="text-slate-600 leading-relaxed">
-              {featured.excerpt}
-            </p>
-            <span className="text-xs text-slate-400 pt-2">{format(new Date(featured.date), 'MMM d')}</span>
-          </div>
-        </section>
-      )}
+      <section className="reveal-up reveal-delay-1 grid gap-8 lg:grid-cols-12">
+        <article className="lg:col-span-7">
+          <Link href={`/blog/${featured.slug}`} className="block overflow-hidden rounded-3xl border border-[var(--line)] bg-white">
+            <div className="relative aspect-[16/10]">
+              <SafeImage
+                src={getPostImageForDisplay(featured.image, featured.category)}
+                alt={featured.title}
+                fallbackSrc={getCategoryFallbackImage(featured.category)}
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 1024px) 100vw, 66vw"
+              />
+            </div>
+            <div className="space-y-3 p-6">
+              <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
+                <span>{featured.type}</span>
+                <span>•</span>
+                <span>{format(new Date(featured.date), 'MMMM d, yyyy')}</span>
+              </div>
+              <h2 className="text-4xl font-bold leading-tight">{featured.title}</h2>
+              <p className="text-sm text-[var(--muted)]">{featured.excerpt}</p>
+            </div>
+          </Link>
+        </article>
 
-      {/* 3. ARCHIVE GRID */}
-      {grid.length > 0 && (
-        <section>
-          <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-6 mb-12">
-            Recent Analysis
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-            {grid.map((post) => (
-              <article key={post.slug} className="group space-y-5">
-                <div className="relative aspect-[3/2] rounded-2xl overflow-hidden border border-slate-100 bg-slate-50">
-                  <SafeImage
-                    src={post.image || ''}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="space-y-3">
-                  <h3 className="text-xl font-heading font-bold text-slate-950 leading-snug group-hover:text-blue-600 transition-colors">
-                    <Link href={`/blog/${post.slug}`}>
-                      {post.title}
-                    </Link>
-                  </h3>
-                  <p className="text-sm text-slate-500 line-clamp-2">
-                    {post.excerpt}
-                  </p>
-                  <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block pt-2">
-                    {format(new Date(post.date), 'MMMM d, yyyy')}
-                  </span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      )}
+        <aside className="space-y-4 lg:col-span-5">
+          {rest.slice(0, 3).map(post => (
+            <article key={post.slug} className="editorial-card rounded-2xl p-4">
+              <div className="mb-2 flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
+                <span>{post.type}</span>
+                <span>{format(new Date(post.date), 'MMM d')}</span>
+              </div>
+              <h3 className="text-2xl font-bold leading-tight">
+                <Link href={`/blog/${post.slug}`} className="hover:text-[var(--c-accent)]">
+                  {post.title}
+                </Link>
+              </h3>
+              <p className="mt-2 line-clamp-2 text-sm text-[var(--muted)]">{post.excerpt}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {post.tags.slice(0, 2).map(tag => (
+                  <Link key={tag} href={`/tag/${tag}`} className="chip rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em]">
+                    {titleFromSlug(tag)}
+                  </Link>
+                ))}
+              </div>
+            </article>
+          ))}
+        </aside>
+      </section>
 
-      {/* 4. NEWSLETTER CTA */}
-      <section className="bg-slate-950 rounded-3xl p-16 text-center space-y-8 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600"></div>
-        <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-          <h2 className="text-3xl font-heading font-bold text-white">
-            Master the {dbCategory} Stack
-          </h2>
-          <p className="text-slate-400 leading-relaxed">
-            Get weekly architectural patterns and engineering deep dives specific to {dbCategory} delivered to your inbox.
-          </p>
-          <div className="max-w-lg mx-auto">
-            <NewsletterForm location={`category-${dbCategory}`} variant="dark" />
-          </div>
+      <section className="reveal-up reveal-delay-2 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {rest.slice(3).map(post => (
+          <article key={post.slug} className="editorial-card rounded-2xl p-4">
+            <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--surface-soft)]">
+              <SafeImage
+                src={getPostImageForDisplay(post.image, post.category)}
+                alt={post.title}
+                fallbackSrc={getCategoryFallbackImage(post.category)}
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 48vw, 32vw"
+              />
+            </div>
+            <div className="space-y-2">
+              <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">{post.type}</div>
+              <h3 className="text-2xl font-bold leading-tight">
+                <Link href={`/blog/${post.slug}`} className="hover:text-[var(--c-accent)]">
+                  {post.title}
+                </Link>
+              </h3>
+              <p className="line-clamp-2 text-sm text-[var(--muted)]">{post.excerpt}</p>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="rounded-[2rem] border border-[#0a314f] bg-[#071b2d] p-8 text-white sm:p-10">
+        <h3 className="text-3xl font-bold text-white">{categoryName} Briefing</h3>
+        <p className="mt-2 max-w-xl text-sm text-slate-300">
+          Get curated {categoryName} analysis in your inbox with practical architecture signals and implementation takeaways.
+        </p>
+        <div className="mt-5 max-w-lg">
+          <NewsletterForm location={`category-${categoryName.toLowerCase()}`} variant="dark" />
         </div>
       </section>
     </div>
